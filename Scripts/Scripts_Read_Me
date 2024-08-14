@@ -1,0 +1,6 @@
+#####
+# Scripts for running glob2loc
+# Each folder contains scripts for different purposes - e.g. land cover forecasting, estimating agricultural intensity, calculating biodiversity impacts, constructing distribution models, etc
+# Within each folder, scripts should be run in numberical order, starting with the script named '1.0_...'
+# Scripts that start with '0.0_...' contain functions, and do not need to be run
+#####
