@@ -1,5 +1,4 @@
-# Glob2Loc
-Projecting multiple anthropogenic stressors to biodiversity at scales that range from local to global
+# Glob2Loc: Projecting multiple anthropogenic stressors to biodiversity at scales that range from local to global
 
 Reducing human impacts on biodiversity is integral to a functioning society: biodiversity provides numerous invaluable services to humanity and to nature, is moderately or highly linked to more than half the world’s GDP, and continued biodiversity loss has been identified as one of the most likely and largest threats to human society. The urgency with which we need to mitigate and reverse human impacts on biodiversity is being recognised at all scales from local to global. This includes the overall global goal in the Kunming-Montreal Global Biodiversity Framework to halt and reverse biodiversity loss by 2030 and to move towards a healthy functioning planet by 2050, with similar goals and aspirations at local, national, regional, and corporate scales.
 
@@ -10,4 +9,6 @@ This project - Glob2Loc: projecting the impact of multiple anthropogenic stresso
 In the short term, the project focuses on understanding the role that human stressors have on biodiversity, working to identify the species and landscapes most at risk of experiencing severe declines to 2100, and the underlying driver(s) of these declines. It looks both into the past and projects into the future, to understand the contribution that different stressors have already had on biodiversity, and the impact they are likely to have to 2100.
 
 In the long term, we will shift focus to three aspects: (1) investigating the policy options and other societal strategies with capacity to restore nature and move towards a healthy functioning planet; (2) expand the model, to incorporate other human stressors (e.g. mining, forestry, etc) and taxonomies (e.g. invertebrates, etc); and (3) explore how results, data, and other information that is created during the project might be most effectively disseminated and communicated to people and organisations with capacity to use it in their daily operations.
+
+More information on methods, approach, outcomes, datasets, and estimated timelines is available elsewhere in the repository.
 
