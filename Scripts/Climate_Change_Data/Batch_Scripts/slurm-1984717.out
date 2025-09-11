@@ -1,0 +1,403 @@
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:plyr’:
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise,
+    summarize
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: sp
+
+Attaching package: ‘raster’
+
+The following object is masked from ‘package:dplyr’:
+
+    select
+
+Warning message:
+In showSRID(SRS_string, format = "PROJ", multiline = "NO", prefer_proj = prefer_proj) :
+  Discarded datum D_unknown in Proj4 definition
+proj_create: SQLite error on SELECT table_name, auth_name, code FROM alias_name WHERE alt_name = ? AND table_name = ? AND source = ?: database disk image is malformed
+proj_create_operations: SQLite error on SELECT table_name, auth_name, code, name, deprecated, is_alias FROM (SELECT 'projected_crs' AS table_name, auth_name, code, name, deprecated, 0 AS is_alias FROM projected_crs WHERE 1 = 1 AND name = ? COLLATE NOCASE  UNION SELECT 'projected_crs' AS table_name, ov.auth_name AS auth_name, ov.code AS code, a.alt_name AS name, ov.deprecated AS deprecated, 1 as is_alias FROM projected_crs ov JOIN alias_name a ON ov.auth_name = a.auth_name AND ov.code = a.code WHERE a.table_name = 'projected_crs' AND a.alt_name = ? COLLATE NOCASE ) ORDER BY deprecated, is_alias, length(name), name LIMIT 2: database disk image is malformed
+proj_create_operations: SQLite error on SELECT auth_name, code FROM geodetic_crs WHERE datum_auth_name = ? AND datum_code = ? AND deprecated = 0 ORDER BY auth_name, code: database disk image is malformed
+proj_create: SQLite error on SELECT table_name, auth_name, code FROM alias_name WHERE alt_name = ? AND table_name = ? AND source = ?: database disk image is malformed
+proj_create_operations: SQLite error on SELECT table_name, auth_name, code, name, deprecated, is_alias FROM (SELECT 'projected_crs' AS table_name, auth_name, code, name, deprecated, 0 AS is_alias FROM projected_crs WHERE 1 = 1 AND name = ? COLLATE NOCASE  UNION SELECT 'projected_crs' AS table_name, ov.auth_name AS auth_name, ov.code AS code, a.alt_name AS name, ov.deprecated AS deprecated, 1 as is_alias FROM projected_crs ov JOIN alias_name a ON ov.auth_name = a.auth_name AND ov.code = a.code WHERE a.table_name = 'projected_crs' AND a.alt_name = ? COLLATE NOCASE ) ORDER BY deprecated, is_alias, length(name), name LIMIT 2: database disk image is malformed
+[[1]]
+[[1]][[1]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : memory
+names      : layer 
+values     : -1638.386, 4700.759  (min, max)
+
+
+[[1]][[2]]
+class      : RasterLayer 
+dimensions : 12027, 24053, 289285431  (nrow, ncol, ncell)
+resolution : 1500.029, 1499.966  (x, y)
+extent     : -18040096, 18040096, -9020048, 9020048  (xmin, xmax, ymin, ymax)
+crs        : +proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs 
+source     : r_tmp_2022-05-11_120029_1926600_95514.grd 
+names      : layer 
+values     : -1638.367, 4698.986  (min, max)
+
+
+
+[[2]]
+[[2]][[1]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : memory
+names      : layer 
+values     : -1664.075, 4705.581  (min, max)
+
+
+[[2]][[2]]
+class      : RasterLayer 
+dimensions : 12027, 24053, 289285431  (nrow, ncol, ncell)
+resolution : 1500.029, 1499.966  (x, y)
+extent     : -18040096, 18040096, -9020048, 9020048  (xmin, xmax, ymin, ymax)
+crs        : +proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs 
+source     : r_tmp_2022-05-11_120029_1926601_14735.grd 
+names      : layer 
+values     : -1664.054, 4703.855  (min, max)
+
+
+
+[[3]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[4]]
+[1] "Error in rgdal::rawTransform(projto_int, projfrom, nrow(xy), xy[, 1],  : \n  coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::rawTransform(projto_int, projfrom, nrow(xy), xy[, 1],     xy[, 2], wkt = use_proj6): coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[5]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[6]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[7]]
+NULL
+
+[[8]]
+NULL
+
+[[9]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[10]]
+NULL
+
+[[11]]
+NULL
+
+[[12]]
+NULL
+
+[[13]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[14]]
+[1] "Error in rgdal::rawTransform(projto_int, projfrom, nrow(xy), xy[, 1],  : \n  coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::rawTransform(projto_int, projfrom, nrow(xy), xy[, 1],     xy[, 2], wkt = use_proj6): coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[15]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[16]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[17]]
+NULL
+
+[[18]]
+NULL
+
+[[19]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[20]]
+NULL
+
+[[21]]
+NULL
+
+[[22]]
+[[22]][[1]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : memory
+names      : layer 
+values     : -1743.864, 5014.359  (min, max)
+
+
+[[22]][[2]]
+class      : RasterLayer 
+dimensions : 12027, 24053, 289285431  (nrow, ncol, ncell)
+resolution : 1500.029, 1499.966  (x, y)
+extent     : -18040096, 18040096, -9020048, 9020048  (xmin, xmax, ymin, ymax)
+crs        : +proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs 
+source     : r_tmp_2022-05-11_120457_1926601_54302.grd 
+names      : layer 
+values     : -1743.82, 5012.984  (min, max)
+
+
+
+[[23]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[24]]
+[1] "Error in rgdal::rawTransform(projto_int, projfrom, nrow(xy), xy[, 1],  : \n  coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::rawTransform(projto_int, projfrom, nrow(xy), xy[, 1],     xy[, 2], wkt = use_proj6): coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[25]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[26]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[27]]
+NULL
+
+[[28]]
+NULL
+
+[[29]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[30]]
+[[30]][[1]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : memory
+names      : layer 
+values     : -1751.552, 5056.194  (min, max)
+
+
+[[30]][[2]]
+class      : RasterLayer 
+dimensions : 12027, 24053, 289285431  (nrow, ncol, ncell)
+resolution : 1500.029, 1499.966  (x, y)
+extent     : -18040096, 18040096, -9020048, 9020048  (xmin, xmax, ymin, ymax)
+crs        : +proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs 
+source     : r_tmp_2022-05-11_120029_1926609_55025.grd 
+names      : layer 
+values     : -1751.479, 5055.14  (min, max)
+
+
+
+[[31]]
+[[31]][[1]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : memory
+names      : layer 
+values     : -1763.511, 5079.559  (min, max)
+
+
+[[31]][[2]]
+class      : RasterLayer 
+dimensions : 12027, 24053, 289285431  (nrow, ncol, ncell)
+resolution : 1500.029, 1499.966  (x, y)
+extent     : -18040096, 18040096, -9020048, 9020048  (xmin, xmax, ymin, ymax)
+crs        : +proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs 
+source     : r_tmp_2022-05-11_120458_1926600_30342.grd 
+names      : layer 
+values     : -1763.444, 5078.441  (min, max)
+
+
+
+[[32]]
+[[32]][[1]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : memory
+names      : layer 
+values     : -1839.596, 5269.461  (min, max)
+
+
+[[32]][[2]]
+class      : RasterLayer 
+dimensions : 12027, 24053, 289285431  (nrow, ncol, ncell)
+resolution : 1500.029, 1499.966  (x, y)
+extent     : -18040096, 18040096, -9020048, 9020048  (xmin, xmax, ymin, ymax)
+crs        : +proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs 
+source     : r_tmp_2022-05-11_120916_1926601_67349.grd 
+names      : layer 
+values     : -1839.529, 5268.351  (min, max)
+
+
+
+[[33]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[34]]
+[1] "Error in rgdal::rawTransform(projto_int, projfrom, nrow(xy), xy[, 1],  : \n  coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::rawTransform(projto_int, projfrom, nrow(xy), xy[, 1],     xy[, 2], wkt = use_proj6): coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[35]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[36]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[37]]
+NULL
+
+[[38]]
+[[38]][[1]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : memory
+names      : layer 
+values     : -1789.806, 5226.02  (min, max)
+
+
+[[38]][[2]]
+class      : RasterLayer 
+dimensions : 12027, 24053, 289285431  (nrow, ncol, ncell)
+resolution : 1500.029, 1499.966  (x, y)
+extent     : -18040096, 18040096, -9020048, 9020048  (xmin, xmax, ymin, ymax)
+crs        : +proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs 
+source     : r_tmp_2022-05-11_120029_1926607_61920.grd 
+names      : layer 
+values     : -1789.783, 5224.543  (min, max)
+
+
+
+[[39]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[40]]
+[[40]][[1]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : memory
+names      : layer 
+values     : -1876.589, 5676.662  (min, max)
+
+
+[[40]][[2]]
+class      : RasterLayer 
+dimensions : 12027, 24053, 289285431  (nrow, ncol, ncell)
+resolution : 1500.029, 1499.966  (x, y)
+extent     : -18040096, 18040096, -9020048, 9020048  (xmin, xmax, ymin, ymax)
+crs        : +proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs 
+source     : r_tmp_2022-05-11_120457_1926609_44375.grd 
+names      : layer 
+values     : -1876.565, 5674.898  (min, max)
+
+
+
+Warning message:
+In mclapply(dir.list, wat.balance.function, mc.cores = n_cores) :
+  scheduled cores 9, 5, 3, 6, 4 encountered errors in user code, all values of the jobs will be affected

@@ -1,0 +1,1480 @@
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:plyr’:
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise,
+    summarize
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: sp
+
+Attaching package: ‘raster’
+
+The following object is masked from ‘package:dplyr’:
+
+    select
+
+[[1]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Precip_in_warmest_quarter.tif 
+names      : Precip_in_warmest_quarter 
+values     : 0.6084681, 1655.059  (min, max)
+
+
+[[2]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Precip_in_warmest_quarter.tif 
+names      : Precip_in_warmest_quarter 
+values     : 0.4903556, 1698.358  (min, max)
+
+
+[[3]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Precip_in_warmest_quarter.tif 
+names      : Precip_in_warmest_quarter 
+values     : 0.6376019, 1557.04  (min, max)
+
+
+[[4]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Precip_in_warmest_quarter.tif 
+names      : Precip_in_warmest_quarter 
+values     : 0.6648611, 1708.174  (min, max)
+
+
+[[5]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Precip_in_warmest_quarter.tif 
+names      : Precip_in_warmest_quarter 
+values     : 0.7001691, 1723.728  (min, max)
+
+
+[[6]]
+NULL
+
+[[7]]
+NULL
+
+[[8]]
+NULL
+
+[[9]]
+NULL
+
+[[10]]
+NULL
+
+[[11]]
+NULL
+
+[[12]]
+NULL
+
+[[13]]
+NULL
+
+[[14]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Precip_in_warmest_quarter.tif 
+names      : Precip_in_warmest_quarter 
+values     : 0.7024331, 1758.681  (min, max)
+
+
+[[15]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Precip_in_warmest_quarter.tif 
+names      : Precip_in_warmest_quarter 
+values     : 0.7024331, 1762.21  (min, max)
+
+
+[[16]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Precip_in_warmest_quarter.tif 
+names      : Precip_in_warmest_quarter 
+values     : 0.7441783, 1786.03  (min, max)
+
+
+[[17]]
+NULL
+
+[[18]]
+NULL
+
+[[19]]
+NULL
+
+[[20]]
+NULL
+
+[[21]]
+NULL
+
+[[22]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Precip_in_warmest_quarter.tif 
+names      : Precip_in_warmest_quarter 
+values     : 0.8240518, 1734.388  (min, max)
+
+
+[[23]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Precip_in_warmest_quarter.tif 
+names      : Precip_in_warmest_quarter 
+values     : 1.108866, 1887.659  (min, max)
+
+
+[[24]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Precip_in_warmest_quarter.tif 
+names      : Precip_in_warmest_quarter 
+values     : 0.6720017, 1973.662  (min, max)
+
+
+[[25]]
+NULL
+
+[[26]]
+NULL
+
+[[27]]
+NULL
+
+[[28]]
+NULL
+
+[[29]]
+NULL
+
+[[30]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Precip_in_warmest_quarter.tif 
+names      : Precip_in_warmest_quarter 
+values     : 0.7880652, 1798.622  (min, max)
+
+
+[[31]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Precip_in_warmest_quarter.tif 
+names      : Precip_in_warmest_quarter 
+values     : 1.813848, 1899.557  (min, max)
+
+
+[[32]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Precip_in_warmest_quarter.tif 
+names      : Precip_in_warmest_quarter 
+values     : 0.9392571, 1966.095  (min, max)
+
+
+[[33]]
+NULL
+
+[[34]]
+NULL
+
+[[35]]
+NULL
+
+[[36]]
+NULL
+
+[[37]]
+NULL
+
+[[38]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Precip_in_warmest_quarter.tif 
+names      : Precip_in_warmest_quarter 
+values     : 1.098054, 1951.375  (min, max)
+
+
+[[39]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Precip_in_warmest_quarter.tif 
+names      : Precip_in_warmest_quarter 
+values     : 1.050487, 1830.959  (min, max)
+
+
+[[40]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Precip_in_warmest_quarter.tif 
+names      : Precip_in_warmest_quarter 
+values     : 0.9751995, 2077.169  (min, max)
+
+
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:plyr’:
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise,
+    summarize
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: sp
+
+Attaching package: ‘raster’
+
+The following object is masked from ‘package:dplyr’:
+
+    select
+
+Loading required package: palinsol
+Loading required package: gsl
+
+Please see the vignette at https://envirem.github.io/ENVIREM_tutorial.html for a detailed walk-through of this package.
+
+
+Attaching package: ‘matrixStats’
+
+The following object is masked from ‘package:dplyr’:
+
+    count
+
+The following object is masked from ‘package:plyr’:
+
+    count
+
+[[1]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -53.66098, 29.7512  (min, max)
+
+
+[[2]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -53.20046, 30.10642  (min, max)
+
+
+[[3]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -52.88288, 30.49009  (min, max)
+
+
+[[4]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -52.8012, 30.55478  (min, max)
+
+
+[[5]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -52.63393, 30.74748  (min, max)
+
+
+[[6]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -51.76846, 31.55896  (min, max)
+
+
+[[7]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -51.59349, 31.74134  (min, max)
+
+
+[[8]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -51.23121, 31.984  (min, max)
+
+
+[[9]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -51.71216, 31.49022  (min, max)
+
+
+[[10]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -51.24542, 31.92919  (min, max)
+
+
+[[11]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -50.55633, 32.57259  (min, max)
+
+
+[[12]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -51.13018, 31.66933  (min, max)
+
+
+[[13]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -50.91786, 31.88071  (min, max)
+
+
+[[14]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -49.52771, 33.19633  (min, max)
+
+
+[[15]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -50.95648, 32.40157  (min, max)
+
+
+[[16]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -50.59691, 32.67354  (min, max)
+
+
+[[17]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -49.29358, 33.83981  (min, max)
+
+
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:plyr’:
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise,
+    summarize
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: sp
+
+Attaching package: ‘raster’
+
+The following object is masked from ‘package:dplyr’:
+
+    select
+
+rgdal: version: 1.5-23, (SVN revision 1121)
+Geospatial Data Abstraction Library extensions to R successfully loaded
+Loaded GDAL runtime: GDAL 3.3.0, released 2021/04/26
+Path to GDAL shared files: /apps/system/easybuild/software/GDAL/3.3.0-foss-2021a/share/gdal
+GDAL binary built with GEOS: TRUE 
+Loaded PROJ runtime: Rel. 8.0.1, March 5th, 2021, [PJ_VERSION: 801]
+Path to PROJ shared files: /home/pubh0329/.local/share/proj:/apps/system/easybuild/software/PROJ/8.0.1-GCCcore-10.3.0/share/proj:/apps/system/easybuild/software/PROJ/8.0.1-GCCcore-10.3.0/share/proj
+PROJ CDN enabled: FALSE
+Linking to sp version:1.4-5
+To mute warnings of possible GDAL/OSR exportToProj4() degradation,
+use options("rgdal_show_exportToProj4_warnings"="none") before loading rgdal.
+Warning message:
+In showSRID(SRS_string, format = "PROJ", multiline = "NO", prefer_proj = prefer_proj) :
+  Discarded datum D_unknown in Proj4 definition
+
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters/Variance_of_temperature.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters/Variance_of_temperature.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters/Variance_of_precipitation.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters/Variance_of_precipitation.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters/Precip_in_warmest_quarter.tiff 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters/Precip_in_warmest_quarter.tiff
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters/Precip_in_warmest_quarter.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters/Precip_in_warmest_quarter.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters/Mean_annual_temp.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters/Mean_annual_temp.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters/GDD_5C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters/GDD_5C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters/GDD_10C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters/GDD_10C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters/Annual_Precipitation.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters/Annual_Precipitation.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2041-2060/Managed_Rasters/Water_Balance.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2041-2060/Managed_Rasters/Water_Balance.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2041-2060/Managed_Rasters/Variance_of_temperature.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2041-2060/Managed_Rasters/Variance_of_temperature.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2041-2060/Managed_Rasters/Variance_of_precipitation.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2041-2060/Managed_Rasters/Variance_of_precipitation.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2041-2060/Managed_Rasters/Precip_in_warmest_quarter.tiff 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2041-2060/Managed_Rasters/Precip_in_warmest_quarter.tiff
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2041-2060/Managed_Rasters/Precip_in_warmest_quarter.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2041-2060/Managed_Rasters/Precip_in_warmest_quarter.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2041-2060/Managed_Rasters/Mean_annual_temp.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2041-2060/Managed_Rasters/Mean_annual_temp.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2041-2060/Managed_Rasters/GDD_5C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2041-2060/Managed_Rasters/GDD_5C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2041-2060/Managed_Rasters/GDD_10C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2041-2060/Managed_Rasters/GDD_10C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2041-2060/Managed_Rasters/Annual_Precipitation.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2041-2060/Managed_Rasters/Annual_Precipitation.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2021-2040/Managed_Rasters/Water_Balance.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2021-2040/Managed_Rasters/Water_Balance.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2021-2040/Managed_Rasters/Variance_of_temperature.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2021-2040/Managed_Rasters/Variance_of_temperature.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2021-2040/Managed_Rasters/Variance_of_precipitation.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2021-2040/Managed_Rasters/Variance_of_precipitation.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2021-2040/Managed_Rasters/Precip_in_warmest_quarter.tiff 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2021-2040/Managed_Rasters/Precip_in_warmest_quarter.tiff
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2021-2040/Managed_Rasters/Precip_in_warmest_quarter.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2021-2040/Managed_Rasters/Precip_in_warmest_quarter.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2021-2040/Managed_Rasters/Mean_annual_temp.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2021-2040/Managed_Rasters/Mean_annual_temp.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2021-2040/Managed_Rasters/GDD_5C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2021-2040/Managed_Rasters/GDD_5C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2021-2040/Managed_Rasters/GDD_10C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2021-2040/Managed_Rasters/GDD_10C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2021-2040/Managed_Rasters/Annual_Precipitation.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2021-2040/Managed_Rasters/Annual_Precipitation.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2081-2100/Managed_Rasters/Variance_of_temperature.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2081-2100/Managed_Rasters/Variance_of_temperature.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2081-2100/Managed_Rasters/Variance_of_precipitation.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2081-2100/Managed_Rasters/Variance_of_precipitation.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2081-2100/Managed_Rasters/Precip_in_warmest_quarter.tiff 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2081-2100/Managed_Rasters/Precip_in_warmest_quarter.tiff
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2081-2100/Managed_Rasters/Precip_in_warmest_quarter.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2081-2100/Managed_Rasters/Precip_in_warmest_quarter.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2081-2100/Managed_Rasters/Mean_annual_temp.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2081-2100/Managed_Rasters/Mean_annual_temp.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2081-2100/Managed_Rasters/GDD_5C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2081-2100/Managed_Rasters/GDD_5C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2081-2100/Managed_Rasters/GDD_10C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2081-2100/Managed_Rasters/GDD_10C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2041-2060/Managed_Rasters/Variance_of_temperature.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2041-2060/Managed_Rasters/Variance_of_temperature.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2041-2060/Managed_Rasters/Variance_of_precipitation.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2041-2060/Managed_Rasters/Variance_of_precipitation.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2041-2060/Managed_Rasters/Precip_in_warmest_quarter.tiff 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2041-2060/Managed_Rasters/Precip_in_warmest_quarter.tiff
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2041-2060/Managed_Rasters/Precip_in_warmest_quarter.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2041-2060/Managed_Rasters/Precip_in_warmest_quarter.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2041-2060/Managed_Rasters/Mean_annual_temp.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2041-2060/Managed_Rasters/Mean_annual_temp.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2041-2060/Managed_Rasters/GDD_5C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2041-2060/Managed_Rasters/GDD_5C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2041-2060/Managed_Rasters/GDD_10C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2041-2060/Managed_Rasters/GDD_10C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2021-2040/Managed_Rasters/Water_Balance.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2021-2040/Managed_Rasters/Water_Balance.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2021-2040/Managed_Rasters/Variance_of_temperature.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2021-2040/Managed_Rasters/Variance_of_temperature.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2021-2040/Managed_Rasters/Variance_of_precipitation.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2021-2040/Managed_Rasters/Variance_of_precipitation.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2021-2040/Managed_Rasters/Precip_in_warmest_quarter.tiff 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2021-2040/Managed_Rasters/Precip_in_warmest_quarter.tiff
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2021-2040/Managed_Rasters/Precip_in_warmest_quarter.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2021-2040/Managed_Rasters/Precip_in_warmest_quarter.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2021-2040/Managed_Rasters/Mean_annual_temp.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2021-2040/Managed_Rasters/Mean_annual_temp.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2021-2040/Managed_Rasters/GDD_5C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2021-2040/Managed_Rasters/GDD_5C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2021-2040/Managed_Rasters/GDD_10C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2021-2040/Managed_Rasters/GDD_10C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2021-2040/Managed_Rasters/Annual_Precipitation.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2021-2040/Managed_Rasters/Annual_Precipitation.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2081-2100/Managed_Rasters/Variance_of_temperature.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2081-2100/Managed_Rasters/Variance_of_temperature.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2081-2100/Managed_Rasters/Variance_of_precipitation.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2081-2100/Managed_Rasters/Variance_of_precipitation.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2081-2100/Managed_Rasters/Precip_in_warmest_quarter.tiff 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2081-2100/Managed_Rasters/Precip_in_warmest_quarter.tiff
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2081-2100/Managed_Rasters/Precip_in_warmest_quarter.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2081-2100/Managed_Rasters/Precip_in_warmest_quarter.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2081-2100/Managed_Rasters/Mean_annual_temp.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2081-2100/Managed_Rasters/Mean_annual_temp.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2081-2100/Managed_Rasters/GDD_5C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2081-2100/Managed_Rasters/GDD_5C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2081-2100/Managed_Rasters/GDD_10C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2081-2100/Managed_Rasters/GDD_10C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2041-2060/Managed_Rasters/Variance_of_temperature.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2041-2060/Managed_Rasters/Variance_of_temperature.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2041-2060/Managed_Rasters/Variance_of_precipitation.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2041-2060/Managed_Rasters/Variance_of_precipitation.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2041-2060/Managed_Rasters/Precip_in_warmest_quarter.tiff 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2041-2060/Managed_Rasters/Precip_in_warmest_quarter.tiff
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2041-2060/Managed_Rasters/Precip_in_warmest_quarter.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2041-2060/Managed_Rasters/Precip_in_warmest_quarter.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2041-2060/Managed_Rasters/Mean_annual_temp.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2041-2060/Managed_Rasters/Mean_annual_temp.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2041-2060/Managed_Rasters/GDD_5C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2041-2060/Managed_Rasters/GDD_5C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2041-2060/Managed_Rasters/GDD_10C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2041-2060/Managed_Rasters/GDD_10C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2021-2040/Managed_Rasters/Variance_of_temperature.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2021-2040/Managed_Rasters/Variance_of_temperature.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2021-2040/Managed_Rasters/Variance_of_precipitation.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2021-2040/Managed_Rasters/Variance_of_precipitation.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2021-2040/Managed_Rasters/Precip_in_warmest_quarter.tiff 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2021-2040/Managed_Rasters/Precip_in_warmest_quarter.tiff
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2021-2040/Managed_Rasters/Precip_in_warmest_quarter.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2021-2040/Managed_Rasters/Precip_in_warmest_quarter.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2021-2040/Managed_Rasters/Mean_annual_temp.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2021-2040/Managed_Rasters/Mean_annual_temp.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2021-2040/Managed_Rasters/GDD_5C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2021-2040/Managed_Rasters/GDD_5C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2021-2040/Managed_Rasters/GDD_10C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2021-2040/Managed_Rasters/GDD_10C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2081-2100/Managed_Rasters/Water_Balance.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2081-2100/Managed_Rasters/Water_Balance.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2081-2100/Managed_Rasters/Variance_of_temperature.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2081-2100/Managed_Rasters/Variance_of_temperature.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2081-2100/Managed_Rasters/Variance_of_precipitation.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2081-2100/Managed_Rasters/Variance_of_precipitation.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2081-2100/Managed_Rasters/Precip_in_warmest_quarter.tiff 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2081-2100/Managed_Rasters/Precip_in_warmest_quarter.tiff
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2081-2100/Managed_Rasters/Precip_in_warmest_quarter.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2081-2100/Managed_Rasters/Precip_in_warmest_quarter.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2081-2100/Managed_Rasters/Mean_annual_temp.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2081-2100/Managed_Rasters/Mean_annual_temp.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2081-2100/Managed_Rasters/GDD_5C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2081-2100/Managed_Rasters/GDD_5C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2081-2100/Managed_Rasters/GDD_10C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2081-2100/Managed_Rasters/GDD_10C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2081-2100/Managed_Rasters/Annual_Precipitation.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2081-2100/Managed_Rasters/Annual_Precipitation.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2041-2060/Managed_Rasters/Variance_of_temperature.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2041-2060/Managed_Rasters/Variance_of_temperature.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2041-2060/Managed_Rasters/Variance_of_precipitation.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2041-2060/Managed_Rasters/Variance_of_precipitation.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2041-2060/Managed_Rasters/Precip_in_warmest_quarter.tiff 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2041-2060/Managed_Rasters/Precip_in_warmest_quarter.tiff
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2041-2060/Managed_Rasters/Precip_in_warmest_quarter.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2041-2060/Managed_Rasters/Precip_in_warmest_quarter.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2041-2060/Managed_Rasters/Mean_annual_temp.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2041-2060/Managed_Rasters/Mean_annual_temp.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2041-2060/Managed_Rasters/GDD_5C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2041-2060/Managed_Rasters/GDD_5C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2041-2060/Managed_Rasters/GDD_10C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2041-2060/Managed_Rasters/GDD_10C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2041-2060/Managed_Rasters/Annual_Precipitation.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2041-2060/Managed_Rasters/Annual_Precipitation.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2021-2040/Managed_Rasters/Variance_of_temperature.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2021-2040/Managed_Rasters/Variance_of_temperature.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2021-2040/Managed_Rasters/Variance_of_precipitation.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2021-2040/Managed_Rasters/Variance_of_precipitation.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2021-2040/Managed_Rasters/Precip_in_warmest_quarter.tiff 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2021-2040/Managed_Rasters/Precip_in_warmest_quarter.tiff
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2021-2040/Managed_Rasters/Precip_in_warmest_quarter.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2021-2040/Managed_Rasters/Precip_in_warmest_quarter.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2021-2040/Managed_Rasters/Mean_annual_temp.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2021-2040/Managed_Rasters/Mean_annual_temp.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2021-2040/Managed_Rasters/GDD_5C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2021-2040/Managed_Rasters/GDD_5C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2021-2040/Managed_Rasters/GDD_10C.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2021-2040/Managed_Rasters/GDD_10C.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2021-2040/Managed_Rasters/Annual_Precipitation.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2021-2040/Managed_Rasters/Annual_Precipitation.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/Historic/1995-2014/Managed_Rasters/Water_Balance.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/Historic/1995-2014/Managed_Rasters/Water_Balance.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/Historic/1995-2014/Managed_Rasters/Variance_of_temperature.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/Historic/1995-2014/Managed_Rasters/Variance_of_temperature.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/Historic/1995-2014/Managed_Rasters/Variance_of_precipitation.tif 
+Error in .local(.Object, ...) : Dataset copy failed
+Calls: reproject.fun ... <Anonymous> -> new -> initialize -> initialize -> .local
+In addition: There were 50 or more warnings (use warnings() to see the first 50)
+Execution halted
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:plyr’:
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise,
+    summarize
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: sp
+
+Attaching package: ‘raster’
+
+The following object is masked from ‘package:dplyr’:
+
+    select
+
+Warning message:
+In showSRID(SRS_string, format = "PROJ", multiline = "NO", prefer_proj = prefer_proj) :
+  Discarded datum D_unknown in Proj4 definition
+proj_create_operations: SQLite error on SELECT table_name, auth_name, code, name, deprecated, is_alias FROM (SELECT 'projected_crs' AS table_name, auth_name, code, name, deprecated, 0 AS is_alias FROM projected_crs WHERE 1 = 1 AND name = ? COLLATE NOCASE  UNION SELECT 'projected_crs' AS table_name, ov.auth_name AS auth_name, ov.code AS code, a.alt_name AS name, ov.deprecated AS deprecated, 1 as is_alias FROM projected_crs ov JOIN alias_name a ON ov.auth_name = a.auth_name AND ov.code = a.code WHERE a.table_name = 'projected_crs' AND a.alt_name = ? COLLATE NOCASE ) ORDER BY deprecated, is_alias, length(name), name LIMIT 2: database disk image is malformed
+proj_create: SQLite error on SELECT table_name, auth_name, code FROM alias_name WHERE alt_name = ? AND table_name = ? AND source = ?: database disk image is malformed
+proj_create_operations: cannot build geodetic reference frame 6326: SQLite error on SELECT extent.description, extent.south_lat, extent.north_lat, extent.west_lon, extent.east_lon, scope.scope, (CASE WHEN scope.scope LIKE '%large scale%' THEN 0 ELSE 1 END) AS score FROM usage JOIN extent ON usage.extent_auth_name = extent.auth_name AND usage.extent_code = extent.code JOIN scope ON usage.scope_auth_name = scope.auth_name AND usage.scope_code = scope.code WHERE object_table_name = ? AND object_auth_name = ? AND object_code = ? ORDER BY score, usage.auth_name, usage.code: database disk image is malformed
+proj_create_operations: SQLite error on SELECT table_name, auth_name, code, name, deprecated, is_alias FROM (SELECT 'projected_crs' AS table_name, auth_name, code, name, deprecated, 0 AS is_alias FROM projected_crs WHERE 1 = 1 AND name = ? COLLATE NOCASE  UNION SELECT 'projected_crs' AS table_name, ov.auth_name AS auth_name, ov.code AS code, a.alt_name AS name, ov.deprecated AS deprecated, 1 as is_alias FROM projected_crs ov JOIN alias_name a ON ov.auth_name = a.auth_name AND ov.code = a.code WHERE a.table_name = 'projected_crs' AND a.alt_name = ? COLLATE NOCASE ) ORDER BY deprecated, is_alias, length(name), name LIMIT 2: database disk image is malformed
+[[1]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[2]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[3]]
+[[3]][[1]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : memory
+names      : layer 
+values     : -1684.103, 4712.063  (min, max)
+
+
+[[3]][[2]]
+class      : RasterLayer 
+dimensions : 12027, 24053, 289285431  (nrow, ncol, ncell)
+resolution : 1500.029, 1499.966  (x, y)
+extent     : -18040096, 18040096, -9020048, 9020048  (xmin, xmax, ymin, ymax)
+crs        : +proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs 
+source     : r_tmp_2022-05-10_001017_2365752_86893.grd 
+names      : layer 
+values     : -1684.085, 4710.359  (min, max)
+
+
+
+[[4]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[5]]
+[[5]][[1]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : memory
+names      : layer 
+values     : -1698.477, 4768.303  (min, max)
+
+
+[[5]][[2]]
+class      : RasterLayer 
+dimensions : 12027, 24053, 289285431  (nrow, ncol, ncell)
+resolution : 1500.029, 1499.966  (x, y)
+extent     : -18040096, 18040096, -9020048, 9020048  (xmin, xmax, ymin, ymax)
+crs        : +proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs 
+source     : r_tmp_2022-05-10_001017_2365754_34303.grd 
+names      : layer 
+values     : -1698.46, 4766.431  (min, max)
+
+
+
+[[6]]
+NULL
+
+[[7]]
+NULL
+
+[[8]]
+NULL
+
+[[9]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[10]]
+NULL
+
+[[11]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[12]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[13]]
+NULL
+
+[[14]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[15]]
+[[15]][[1]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : memory
+names      : layer 
+values     : -1754.266, 4801.299  (min, max)
+
+
+[[15]][[2]]
+class      : RasterLayer 
+dimensions : 12027, 24053, 289285431  (nrow, ncol, ncell)
+resolution : 1500.029, 1499.966  (x, y)
+extent     : -18040096, 18040096, -9020048, 9020048  (xmin, xmax, ymin, ymax)
+crs        : +proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs 
+source     : r_tmp_2022-05-10_001446_2365754_20902.grd 
+names      : layer 
+values     : -1754.216, 4799.826  (min, max)
+
+
+
+[[16]]
+[[16]][[1]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : memory
+names      : layer 
+values     : -1769.613, 4883.486  (min, max)
+
+
+[[16]][[2]]
+class      : RasterLayer 
+dimensions : 12027, 24053, 289285431  (nrow, ncol, ncell)
+resolution : 1500.029, 1499.966  (x, y)
+extent     : -18040096, 18040096, -9020048, 9020048  (xmin, xmax, ymin, ymax)
+crs        : +proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs 
+source     : r_tmp_2022-05-10_001017_2365755_57507.grd 
+names      : layer 
+values     : -1769.563, 4882.136  (min, max)
+
+
+
+[[17]]
+NULL
+
+[[18]]
+NULL
+
+[[19]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[20]]
+NULL
+
+[[21]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[22]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[23]]
+[[23]][[1]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : memory
+names      : layer 
+values     : -1767.794, 5126.865  (min, max)
+
+
+[[23]][[2]]
+class      : RasterLayer 
+dimensions : 12027, 24053, 289285431  (nrow, ncol, ncell)
+resolution : 1500.029, 1499.966  (x, y)
+extent     : -18040096, 18040096, -9020048, 9020048  (xmin, xmax, ymin, ymax)
+crs        : +proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs 
+source     : r_tmp_2022-05-10_001444_2365752_81440.grd 
+names      : layer 
+values     : -1767.743, 5125.566  (min, max)
+
+
+
+[[24]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[25]]
+NULL
+
+[[26]]
+NULL
+
+[[27]]
+NULL
+
+[[28]]
+NULL
+
+[[29]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[30]]
+[[30]][[1]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : memory
+names      : layer 
+values     : -1751.552, 5056.194  (min, max)
+
+
+[[30]][[2]]
+class      : RasterLayer 
+dimensions : 12027, 24053, 289285431  (nrow, ncol, ncell)
+resolution : 1500.029, 1499.966  (x, y)
+extent     : -18040096, 18040096, -9020048, 9020048  (xmin, xmax, ymin, ymax)
+crs        : +proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs 
+source     : r_tmp_2022-05-10_001017_2365759_87981.grd 
+names      : layer 
+values     : -1751.479, 5055.14  (min, max)
+
+
+
+[[31]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[32]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[33]]
+NULL
+
+[[34]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[35]]
+NULL
+
+[[36]]
+NULL
+
+[[37]]
+NULL
+
+[[38]]
+[[38]][[1]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : memory
+names      : layer 
+values     : -1789.806, 5226.02  (min, max)
+
+
+[[38]][[2]]
+class      : RasterLayer 
+dimensions : 12027, 24053, 289285431  (nrow, ncol, ncell)
+resolution : 1500.029, 1499.966  (x, y)
+extent     : -18040096, 18040096, -9020048, 9020048  (xmin, xmax, ymin, ymax)
+crs        : +proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs 
+source     : r_tmp_2022-05-10_001017_2365757_86729.grd 
+names      : layer 
+values     : -1789.783, 5224.543  (min, max)
+
+
+
+[[39]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[40]]
+[[40]][[1]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : memory
+names      : layer 
+values     : -1876.589, 5676.662  (min, max)
+
+
+[[40]][[2]]
+class      : RasterLayer 
+dimensions : 12027, 24053, 289285431  (nrow, ncol, ncell)
+resolution : 1500.029, 1499.966  (x, y)
+extent     : -18040096, 18040096, -9020048, 9020048  (xmin, xmax, ymin, ymax)
+crs        : +proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs 
+source     : r_tmp_2022-05-10_001446_2365759_18230.grd 
+names      : layer 
+values     : -1876.565, 5674.898  (min, max)
+
+
+
+Warning message:
+In mclapply(dir.list, wat.balance.function, mc.cores = n_cores) :
+  scheduled cores 9, 2, 1, 4 encountered errors in user code, all values of the jobs will be affected
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:plyr’:
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise,
+    summarize
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: sp
+
+Attaching package: ‘raster’
+
+The following object is masked from ‘package:dplyr’:
+
+    select
+
+Warning message:
+In showSRID(SRS_string, format = "PROJ", multiline = "NO", prefer_proj = prefer_proj) :
+  Discarded datum D_unknown in Proj4 definition
+proj_create: SQLite error on SELECT table_name, auth_name, code FROM alias_name WHERE alt_name = ? AND table_name = ? AND source = ?: database disk image is malformed
+proj_create: SQLite error on SELECT table_name, auth_name, code FROM alias_name WHERE alt_name = ? AND table_name = ? AND source = ?: database disk image is malformed
+proj_create: unhandled parameter value type : 0
+proj_create: SQLite error on SELECT table_name, auth_name, code FROM alias_name WHERE alt_name = ? AND table_name = ? AND source = ?: database disk image is malformed
+proj_create: buildEllipsoid: buildUnit: SQLite error on SELECT table_name, auth_name, code FROM alias_name WHERE alt_name = ? AND table_name = ? AND source = ?: database disk image is malformed
+proj_create_operations: SQLite error on SELECT table_name, auth_name, code, name, deprecated, is_alias FROM (SELECT 'projected_crs' AS table_name, auth_name, code, name, deprecated, 0 AS is_alias FROM projected_crs WHERE 1 = 1 AND name = ? COLLATE NOCASE  UNION SELECT 'projected_crs' AS table_name, ov.auth_name AS auth_name, ov.code AS code, a.alt_name AS name, ov.deprecated AS deprecated, 1 as is_alias FROM projected_crs ov JOIN alias_name a ON ov.auth_name = a.auth_name AND ov.code = a.code WHERE a.table_name = 'projected_crs' AND a.alt_name = ? COLLATE NOCASE ) ORDER BY deprecated, is_alias, length(name), name LIMIT 2: database disk image is malformed
+proj_create_operations: SQLite error on SELECT table_name, auth_name, code, name, deprecated, is_alias FROM (SELECT 'projected_crs' AS table_name, auth_name, code, name, deprecated, 0 AS is_alias FROM projected_crs WHERE 1 = 1 AND name = ? COLLATE NOCASE  UNION SELECT 'projected_crs' AS table_name, ov.auth_name AS auth_name, ov.code AS code, a.alt_name AS name, ov.deprecated AS deprecated, 1 as is_alias FROM projected_crs ov JOIN alias_name a ON ov.auth_name = a.auth_name AND ov.code = a.code WHERE a.table_name = 'projected_crs' AND a.alt_name = ? COLLATE NOCASE ) ORDER BY deprecated, is_alias, length(name), name LIMIT 2: database disk image is malformed
+proj_create_operations: SQLite error on SELECT table_name, auth_name, code, name, deprecated, is_alias FROM (SELECT 'geodetic_datum' AS table_name, auth_name, code, name, deprecated, 0 AS is_alias FROM geodetic_datum WHERE 1 = 1 AND name = ? COLLATE NOCASE  UNION SELECT 'geodetic_datum' AS table_name, ov.auth_name AS auth_name, ov.code AS code, a.alt_name AS name, ov.deprecated AS deprecated, 1 as is_alias FROM geodetic_datum ov JOIN alias_name a ON ov.auth_name = a.auth_name AND ov.code = a.code WHERE a.table_name = 'geodetic_datum' AND a.alt_name = ? COLLATE NOCASE ) ORDER BY deprecated, is_alias, length(name), name LIMIT 2: database disk image is malformed
+[[1]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[2]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[3]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[4]]
+[[4]][[1]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : memory
+names      : layer 
+values     : 10.72033, 6015.463  (min, max)
+
+
+[[4]][[2]]
+class      : RasterLayer 
+dimensions : 12027, 24053, 289285431  (nrow, ncol, ncell)
+resolution : 1500.029, 1499.966  (x, y)
+extent     : -18040096, 18040096, -9020048, 9020048  (xmin, xmax, ymin, ymax)
+crs        : +proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs 
+source     : r_tmp_2022-05-10_001910_2368088_28785.grd 
+names      : layer 
+values     : 10.72536, 6014.475  (min, max)
+
+
+
+[[5]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[6]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[7]]
+NULL
+
+[[8]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[9]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[10]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[11]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[12]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[13]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[14]]
+[[14]][[1]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : memory
+names      : layer 
+values     : 11.66512, 6178.756  (min, max)
+
+
+[[14]][[2]]
+class      : RasterLayer 
+dimensions : 12027, 24053, 289285431  (nrow, ncol, ncell)
+resolution : 1500.029, 1499.966  (x, y)
+extent     : -18040096, 18040096, -9020048, 9020048  (xmin, xmax, ymin, ymax)
+crs        : +proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs 
+source     : r_tmp_2022-05-10_002318_2368088_92424.grd 
+names      : layer 
+values     : 11.66644, 6177.798  (min, max)
+
+
+
+[[15]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[16]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[17]]
+NULL
+
+[[18]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[19]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[20]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[21]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[22]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[23]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[24]]
+[[24]][[1]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : memory
+names      : layer 
+values     : 11.83255, 6708.168  (min, max)
+
+
+[[24]][[2]]
+class      : RasterLayer 
+dimensions : 12027, 24053, 289285431  (nrow, ncol, ncell)
+resolution : 1500.029, 1499.966  (x, y)
+extent     : -18040096, 18040096, -9020048, 9020048  (xmin, xmax, ymin, ymax)
+crs        : +proj=moll +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +units=m +no_defs 
+source     : r_tmp_2022-05-10_002727_2368088_03048.grd 
+names      : layer 
+values     : 11.83353, 6707.959  (min, max)
+
+
+
+[[25]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[26]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[27]]
+NULL
+
+[[28]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[29]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[30]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[31]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[32]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[33]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[34]]
+NULL
+
+[[35]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[36]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[37]]
+NULL
+
+[[38]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+[[39]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'extent': coordinate operation creation from WKT failed: Unknown error (code 4096)>
+
+[[40]]
+[1] "Error in rgdal::compare_CRS(projto, projfrom) : \n  source crs creation failed: Unknown error (code 4096)\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in rgdal::compare_CRS(projto, projfrom): source crs creation failed: Unknown error (code 4096)>
+
+Warning message:
+In mclapply(dir.list, precip.function, mc.cores = n_cores) :
+  scheduled cores 1, 8, 6, 5, 10, 9, 3, 2 encountered errors in user code, all values of the jobs will be affected

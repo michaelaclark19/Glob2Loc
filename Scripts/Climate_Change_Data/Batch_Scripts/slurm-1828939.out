@@ -1,0 +1,31 @@
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:plyr’:
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise,
+    summarize
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: sp
+
+Attaching package: ‘raster’
+
+The following object is masked from ‘package:dplyr’:
+
+    select
+
+There were 40 warnings (use warnings() to see them)
+Error in .local(.Object, ...) : 
+
+Error in .rasterObjectFromFile(x, band = band, objecttype = "RasterLayer",  : 
+  Cannot create a RasterLayer object from this file. (file does not exist)
+Calls: raster -> raster -> .local -> .rasterObjectFromFile
+Execution halted

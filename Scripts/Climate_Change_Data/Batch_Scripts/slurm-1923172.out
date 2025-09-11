@@ -1,0 +1,294 @@
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:plyr’:
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise,
+    summarize
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: sp
+
+Attaching package: ‘raster’
+
+The following object is masked from ‘package:dplyr’:
+
+    select
+
+Warning message:
+In showSRID(SRS_string, format = "PROJ", multiline = "NO", prefer_proj = prefer_proj) :
+  Discarded datum D_unknown in Proj4 definition
+[[1]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[2]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[3]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[4]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[5]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[6]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[7]]
+NULL
+
+[[8]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[9]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[10]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[11]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[12]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[13]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[14]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[15]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[16]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[17]]
+NULL
+
+[[18]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[19]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[20]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[21]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[22]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[23]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[24]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[25]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[26]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[27]]
+NULL
+
+[[28]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[29]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[30]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[31]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[32]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[33]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[34]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[35]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[36]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[37]]
+NULL
+
+[[38]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[39]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+[[40]]
+[1] "Error in h(simpleError(msg, call)) : \n  error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'raster': object 'precip_balance' not found>
+
+Warning message:
+In mclapply(dir.list, precip.function, mc.cores = n_cores) :
+  scheduled cores 3, 4, 9, 2, 1, 5, 6, 8, 10 encountered errors in user code, all values of the jobs will be affected

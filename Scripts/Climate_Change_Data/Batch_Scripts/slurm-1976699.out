@@ -1,0 +1,565 @@
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:plyr’:
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise,
+    summarize
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: sp
+
+Attaching package: ‘raster’
+
+The following object is masked from ‘package:dplyr’:
+
+    select
+
+[[1]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[2]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[3]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[4]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[5]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[6]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[7]]
+NULL
+
+[[8]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[9]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[10]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[11]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[12]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[13]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[14]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[15]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[16]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[17]]
+NULL
+
+[[18]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[19]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[20]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[21]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[22]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[23]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[24]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[25]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[26]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[27]]
+NULL
+
+[[28]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[29]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[30]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[31]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[32]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[33]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[34]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[35]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[36]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[37]]
+NULL
+
+[[38]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[39]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+[[40]]
+[1] "Error in precip.warmest.fun(precip.df) : \n  object 'temp.df.warmest' not found\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in precip.warmest.fun(precip.df): object 'temp.df.warmest' not found>
+
+Warning message:
+In mclapply(tmp, mclapply.function, mc.cores = n_cores) :
+  scheduled cores 1, 4, 3, 5, 9, 6, 8, 10, 2 encountered errors in user code, all values of the jobs will be affected
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:plyr’:
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise,
+    summarize
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: sp
+
+Attaching package: ‘raster’
+
+The following object is masked from ‘package:dplyr’:
+
+    select
+
+Loading required package: palinsol
+Loading required package: gsl
+
+Please see the vignette at https://envirem.github.io/ENVIREM_tutorial.html for a detailed walk-through of this package.
+
+
+Attaching package: ‘matrixStats’
+
+The following object is masked from ‘package:dplyr’:
+
+    count
+
+The following object is masked from ‘package:plyr’:
+
+    count
+
+[[1]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -53.66098, 29.7512  (min, max)
+
+
+[[2]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -53.20046, 30.10642  (min, max)
+
+
+[[3]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -52.88288, 30.49009  (min, max)
+
+
+[[4]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -52.8012, 30.55478  (min, max)
+
+
+[[5]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -52.63393, 30.74748  (min, max)
+
+
+[[6]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -51.76846, 31.55896  (min, max)
+
+
+[[7]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -51.59349, 31.74134  (min, max)
+
+
+[[8]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -51.23121, 31.984  (min, max)
+
+
+[[9]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -51.71216, 31.49022  (min, max)
+
+
+[[10]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -51.24542, 31.92919  (min, max)
+
+
+[[11]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -50.55633, 32.57259  (min, max)
+
+
+[[12]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -51.13018, 31.66933  (min, max)
+
+
+[[13]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -50.91786, 31.88071  (min, max)
+
+
+[[14]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -49.52771, 33.19633  (min, max)
+
+
+[[15]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -50.95648, 32.40157  (min, max)
+
+
+[[16]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -50.59691, 32.67354  (min, max)
+
+
+[[17]]
+class      : RasterLayer 
+dimensions : 180, 360, 64800  (nrow, ncol, ncell)
+resolution : 1, 1  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+source     : Mean_annual_temp.tif 
+names      : Mean_annual_temp 
+values     : -49.29358, 33.83981  (min, max)
+
+
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:plyr’:
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise,
+    summarize
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: sp
+
+Attaching package: ‘raster’
+
+The following object is masked from ‘package:dplyr’:
+
+    select
+
+rgdal: version: 1.5-23, (SVN revision 1121)
+Geospatial Data Abstraction Library extensions to R successfully loaded
+Loaded GDAL runtime: GDAL 3.3.0, released 2021/04/26
+Path to GDAL shared files: /apps/system/easybuild/software/GDAL/3.3.0-foss-2021a/share/gdal
+GDAL binary built with GEOS: TRUE 
+Loaded PROJ runtime: Rel. 8.0.1, March 5th, 2021, [PJ_VERSION: 801]
+Path to PROJ shared files: /home/pubh0329/.local/share/proj:/apps/system/easybuild/software/PROJ/8.0.1-GCCcore-10.3.0/share/proj:/apps/system/easybuild/software/PROJ/8.0.1-GCCcore-10.3.0/share/proj
+PROJ CDN enabled: FALSE
+Linking to sp version:1.4-5
+To mute warnings of possible GDAL/OSR exportToProj4() degradation,
+use options("rgdal_show_exportToProj4_warnings"="none") before loading rgdal.
+Warning message:
+In showSRID(SRS_string, format = "PROJ", multiline = "NO", prefer_proj = prefer_proj) :
+  Discarded datum D_unknown in Proj4 definition
+
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters/Variance_of_temperature.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters/Variance_of_temperature.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters/Variance_of_precipitation.tif 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters/Variance_of_precipitation.tif
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters/Precip_in_warmest_quarter.tiff 
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters/Precip_in_warmest_quarter.tiff
+ /data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters/Mean_annual_temp.tif 
+slurmstepd: error: *** JOB 1976699 ON arc-c221 CANCELLED AT 2022-05-09T14:26:52 ***

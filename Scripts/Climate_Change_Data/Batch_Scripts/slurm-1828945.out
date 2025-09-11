@@ -1,0 +1,82 @@
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:plyr’:
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise,
+    summarize
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: sp
+
+Attaching package: ‘raster’
+
+The following object is masked from ‘package:dplyr’:
+
+    select
+
+There were 40 warnings (use warnings() to see them)
+Warning message:
+In showSRID(SRS_string, format = "PROJ", multiline = "NO", prefer_proj = prefer_proj) :
+  Discarded datum D_unknown in Proj4 definition
+/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/Historic/1850-1900/Minimum_Temperature/CMIP6 - Minimum of minimum temperatures (TNn)  deg C - 1850-1900   - Annual (28 models).tiff/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/Historic/1986-2005/Minimum_Temperature/CMIP6 - Minimum of minimum temperatures (TNn)  deg C - 1986-2005   - Annual (28 models).tiff/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2081-2100/Minimum_Temperature/CMIP6 - Minimum of minimum temperatures (TNn)  deg C - Long Term (2081-2100) SSP1-2.6  - Annual (26 models).tiff/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/Historic/1981-2010/Minimum_Temperature/CMIP6 - Minimum of minimum temperatures (TNn)  deg C - 1981-2010   - Annual (28 models).tiff/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2021-2040/Minimum_Temperature/CMIP6 - Minimum of minimum temperatures (TNn)  deg C - Near Term (2021-2040) SSP2-4.5  - Annual (27 models).tiff/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2041-2060/Minimum_Temperature/CMIP6 - Minimum of minimum temperatures (TNn)  deg C - Medium Term (2041-2060) SSP1-2.6  - Annual (26 models) (1).tiff/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/Historic/1961-1990/Minimum_Temperature/CMIP6 - Minimum of minimum temperatures (TNn)  deg C - 1961-1990   - Annual (28 models).tiff/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2021-2040/Minimum_Temperature/CMIP6 - Minimum of minimum temperatures (TNn)  deg C - Near Term (2021-2040) SSP1-2.6  - Annual (26 models).tiff/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/Historic/1995-2014/Minimum_Temperature/CMIP6 - Minimum of minimum temperatures (TNn)  deg C - 1995-2014   - Annual (28 models).tiff/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP1-2.6/2041-2060/Minimum_Temperature/CMIP6 - Minimum of minimum temperatures (TNn)  deg C - Medium Term (2041-2060) SSP1-2.6  - Annual (26 models).tiff/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2021-2040/Minimum_Temperature/CMIP6 - Minimum of minimum temperatures (TNn)  deg C - Near Term (2021-2040) SSP3-7.0  - Annual (23 models).tiff/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2041-2060/Minimum_Temperature/CMIP6 - Minimum of minimum temperatures (TNn)  deg C - Medium Term (2041-2060) SSP2-4.5  - Annual (27 models).tiff/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2041-2060/Minimum_Temperature/CMIP6 - Minimum of minimum temperatures (TNn)  deg C - Medium Term (2041-2060) SSP5-8.5  - Annual (27 models).tiff/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP2-4.5/2081-2100/Minimum_Temperature/CMIP6 - Minimum of minimum temperatures (TNn)  deg C - Long Term (2081-2100) SSP2-4.5  - Annual (27 models).tiff/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2041-2060/Minimum_Temperature/CMIP6 - Minimum of minimum temperatures (TNn)  deg C - Medium Term (2041-2060) SSP3-7.0  - Annual (23 models).tiff/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2021-2040/Minimum_Temperature/CMIP6 - Minimum of minimum temperatures (TNn)  deg C - Near Term (2021-2040) SSP5-8.5  - Annual (27 models).tiff/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Minimum_Temperature/CMIP6 - Minimum of minimum temperatures (TNn)  deg C - Long Term (2081-2100) SSP5-8.5  - Annual (27 models).tiff/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/SSP3-7.0/2081-2100/Minimum_Temperature/CMIP6 - Minimum of minimum temperatures (TNn)  deg C - Long Term (2081-2100) SSP3-7.0  - Annual (23 models).tiff[[1]]
+NULL
+
+[[2]]
+NULL
+
+[[3]]
+NULL
+
+[[4]]
+NULL
+
+[[5]]
+NULL
+
+[[6]]
+NULL
+
+[[7]]
+NULL
+
+[[8]]
+NULL
+
+[[9]]
+NULL
+
+[[10]]
+NULL
+
+[[11]]
+NULL
+
+[[12]]
+NULL
+
+[[13]]
+NULL
+
+[[14]]
+NULL
+
+[[15]]
+NULL
+
+[[16]]
+NULL
+
+[[17]]
+NULL
+
+[[18]]
+NULL
+

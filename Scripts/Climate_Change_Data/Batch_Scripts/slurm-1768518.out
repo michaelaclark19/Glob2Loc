@@ -1,0 +1,43 @@
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:plyr’:
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise,
+    summarize
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: sp
+
+Attaching package: ‘raster’
+
+The following object is masked from ‘package:dplyr’:
+
+    select
+
+Warning message:
+In showSRID(SRS_string, format = "PROJ", multiline = "NO", prefer_proj = prefer_proj) :
+  Discarded datum D_unknown in Proj4 definition
+Error in .local(.Object, ...) : 
+
+proj_create_operations: SQLite error on SELECT table_name, auth_name, code, name, deprecated, is_alias FROM (SELECT 'geodetic_crs' AS table_name, auth_name, code, name, deprecated, 0 AS is_alias FROM geodetic_crs WHERE 1 = 1 AND type = 'geographic 2D' AND name = ? COLLATE NOCASE  UNION SELECT 'geodetic_crs' AS table_name, ov.auth_name AS auth_name, ov.code AS code, a.alt_name AS name, ov.deprecated AS deprecated, 1 as is_alias FROM geodetic_crs ov JOIN alias_name a ON ov.auth_name = a.auth_name AND ov.code = a.code WHERE a.table_name = 'geodetic_crs' AND ov.type = 'geographic 2D' AND a.alt_name = ? COLLATE NOCASE ) ORDER BY deprecated, is_alias, length(name), name LIMIT 2: database disk image is malformed
+proj_create_operations: SQLite error on SELECT table_name, auth_name, code, name, deprecated, is_alias FROM (SELECT 'geodetic_crs' AS table_name, auth_name, code, name, deprecated, 0 AS is_alias FROM geodetic_crs WHERE 1 = 1 AND type = 'geographic 2D' AND name = ? COLLATE NOCASE  UNION SELECT 'geodetic_crs' AS table_name, ov.auth_name AS auth_name, ov.code AS code, a.alt_name AS name, ov.deprecated AS deprecated, 1 as is_alias FROM geodetic_crs ov JOIN alias_name a ON ov.auth_name = a.auth_name AND ov.code = a.code WHERE a.table_name = 'geodetic_crs' AND ov.type = 'geographic 2D' AND a.alt_name = ? COLLATE NOCASE ) ORDER BY deprecated, is_alias, length(name), name LIMIT 2: database disk image is malformed
+proj_create: unhandled parameter value type : 0
+proj_create_operations: SQLite error on SELECT table_name, auth_name, code, name, deprecated, is_alias FROM (SELECT 'geodetic_crs' AS table_name, auth_name, code, name, deprecated, 0 AS is_alias FROM geodetic_crs WHERE 1 = 1 AND type = 'geographic 2D' AND name = ? COLLATE NOCASE  UNION SELECT 'geodetic_crs' AS table_name, ov.auth_name AS auth_name, ov.code AS code, a.alt_name AS name, ov.deprecated AS deprecated, 1 as is_alias FROM geodetic_crs ov JOIN alias_name a ON ov.auth_name = a.auth_name AND ov.code = a.code WHERE a.table_name = 'geodetic_crs' AND ov.type = 'geographic 2D' AND a.alt_name = ? COLLATE NOCASE ) ORDER BY deprecated, is_alias, length(name), name LIMIT 2: database disk image is malformed
+proj_create: buildEllipsoid: buildUnit: SQLite error on SELECT table_name, auth_name, code FROM alias_name WHERE alt_name = ? AND table_name = ? AND source = ?: database disk image is malformed
+proj_create: SQLite error on SELECT table_name, auth_name, code FROM alias_name WHERE alt_name = ? AND table_name = ? AND source = ?: database disk image is malformed
+proj_create: buildUnit: SQLite error on SELECT table_name, auth_name, code FROM alias_name WHERE alt_name = ? AND table_name = ? AND source = ?: database disk image is malformed
+proj_create_operations: SQLite error on SELECT auth_name, code FROM geodetic_crs WHERE datum_auth_name = ? AND datum_code = ? AND deprecated = 0 ORDER BY auth_name, code: database disk image is malformed
+proj_create_operations: cannot build geodeticCRS 4978: SQLite error on SELECT axis.name, abbrev, orientation, uom_auth_name, uom_code, cs.type FROM axis LEFT JOIN coordinate_system cs ON axis.coordinate_system_auth_name = cs.auth_name AND axis.coordinate_system_code = cs.code WHERE coordinate_system_auth_name = ? AND coordinate_system_code = ? ORDER BY coordinate_system_order: database disk image is malformed
+proj_create_operations: SQLite error on SELECT table_name, auth_name, code, name, deprecated, is_alias FROM (SELECT 'geodetic_datum' AS table_name, auth_name, code, name, deprecated, 0 AS is_alias FROM geodetic_datum WHERE 1 = 1 AND name = ? COLLATE NOCASE  UNION SELECT 'geodetic_datum' AS table_name, ov.auth_name AS auth_name, ov.code AS code, a.alt_name AS name, ov.deprecated AS deprecated, 1 as is_alias FROM geodetic_datum ov JOIN alias_name a ON ov.auth_name = a.auth_name AND ov.code = a.code WHERE a.table_name = 'geodetic_datum' AND a.alt_name = ? COLLATE NOCASE ) ORDER BY deprecated, is_alias, length(name), name LIMIT 2: database disk image is malformed
+proj_create_operations: SQLite error on SELECT table_name, auth_name, code, name, deprecated, is_alias FROM (SELECT 'projected_crs' AS table_name, auth_name, code, name, deprecated, 0 AS is_alias FROM projected_crs WHERE 1 = 1 AND name = ? COLLATE NOCASE  UNION SELECT 'projected_crs' AS table_name, ov.auth_name AS auth_name, ov.code AS code, a.alt_name AS name, ov.deprecated AS deprecated, 1 as is_alias FROM projected_crs ov JOIN alias_name a ON ov.auth_name = a.auth_name AND ov.code = a.code WHERE a.table_name = 'projected_crs' AND a.alt_name = ? COLLATE NOCASE ) ORDER BY deprecated, is_alias, length(name), name LIMIT 2: database disk image is malformed
+proj_create_operations: SQLite error on SELECT table_name, auth_name, code, name, deprecated, is_alias FROM (SELECT 'geodetic_crs' AS table_name, auth_name, code, name, deprecated, 0 AS is_alias FROM geodetic_crs WHERE 1 = 1 AND type = 'geographic 2D' AND name = ? COLLATE NOCASE  UNION SELECT 'geodetic_crs' AS table_name, ov.auth_name AS auth_name, ov.code AS code, a.alt_name AS name, ov.deprecated AS deprecated, 1 as is_alias FROM geodetic_crs ov JOIN alias_name a ON ov.auth_name = a.auth_name AND ov.code = a.code WHERE a.table_name = 'geodetic_crs' AND ov.type = 'geographic 2D' AND a.alt_name = ? COLLATE NOCASE ) ORDER BY deprecated, is_alias, length(name), name LIMIT 2: database disk image is malformed
+proj_create_operations: SQLite error on SELECT table_name, auth_name, code, name, deprecated, is_alias FROM (SELECT 'projected_crs' AS table_name, auth_name, code, name, deprecated, 0 AS is_alias FROM projected_crs WHERE 1 = 1 AND name = ? COLLATE NOCASE  UNION SELECT 'projected_crs' AS table_name, ov.auth_name AS auth_name, ov.code AS code, a.alt_name AS name, ov.deprecated AS deprecated, 1 as is_alias FROM projected_crs ov JOIN alias_name a ON ov.auth_name = a.auth_name AND ov.code = a.code WHERE a.table_name = 'projected_crs' AND a.alt_name = ? COLLATE NOCASE ) ORDER BY deprecated, is_alias, length(name), name LIMIT 2: database disk image is malformed
+slurmstepd: error: *** JOB 1768518 ON arc-c144 CANCELLED AT 2022-04-07T14:09:30 ***
