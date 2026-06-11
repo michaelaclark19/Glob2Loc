@@ -98,4 +98,16 @@ Mitigation Scenario Folder: Contains scripts that compile species-level results 
 12. Table Scripts: Contains the scripts used to make the tables in the manuscript. All scripts in this folder are named so that they refer back to the table number in the manuscript text.
 
 
+##### Description of the System Used to Run the Analyses.
+All analyses were run on Oxford’s Advanced Research Computing (ARC) research cluster. A full description of available on ARC is here (https://arc-user-guide.readthedocs.io/en/latest/arc-systems.html). 
+The maximum memory used when running the analyses was 200GB RAM. The space used to store all input and output files for the full analysis exceeds 5TB.  
+All analyses were conducted in R Version 4.2.2. Parts of the analysis interfaced Python 3 with R via the R package reticulate. More information on the reticulate package is available here (https://rstudio.github.io/reticulate/).
 
+##### Description of the Demo Dataset.
+The demo dataset provided as a supplementary material runs the full analysis on a small subset of species (40) that exist in one geographic region (Meso America). It contains all of the data inputs needed to run all scripts used in the analysis. The R scripts used for the full analysis are available on the project GitHub (https://github.com/michaelaclark19/Glob2Loc/). 
+The demo dataset contains a small number of species (40) that exist in one geographic region (Meso America) due to the storage space and RAM required to run the full analysis. 
+The demo dataset is designed to provide an idea of how all scripts and parts of the analysis work. It was tested with R Version 4.2.2 and Python on a MacBook Pro with 32GB of RAM.
+
+##### Running the scripts on the demo dataset.
+To run the scripts on the demo dataset, you should only need to (a) install any R libraries that are not installed on your computer, and (b) change the working directory that is set at the top of each R script so that the working directory refers to the demo dataset.
+From there, the scripts need to be run in the order indicated above. Running the scripts will create additional folders that create intermediate outputs (e.g. folders that contain projected habitat range maps for each species) and final outputs (e.g. folders that contain estimated biodiversity trends for each species). 
