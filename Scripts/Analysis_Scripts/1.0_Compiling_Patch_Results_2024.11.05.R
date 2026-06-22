@@ -16,42 +16,12 @@ library(stringr)
 
 ###
 # setting working directory
-files_stored_wd <- '/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity'
-files_write_wd <- '/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity'
-# setwd('/Users/michael/Desktop/Research/Glob2Loc/tmp_cheetah_files')
-
-###
-# list of taxas
-taxa_list <- c('Mammals','Birds','Amphibians','Reptiles')
-
-###
-# list of thresholds
-threshold_list <- c('specsens','prevalence')
-
-### 
-# list of scenarios we want
-scen_list <-
-  c('esh.future.extent.esh.exp.int.urb',
-    'esh.future.extent.esh.exp',
-    'esh.future.extent.esh.cropexp',
-    'esh.future.extent.esh.pastexp',
-    'esh.future.extent.esh.int',
-    'esh.future.extent.esh.urb',
-    'esh.current.extent.esh')
-
-###
-# species_files <- 
-#   list.files(paste0(getwd(),'/Outputs/CSV_File_Outputs/BAU/',),
-#              pattern = 'Spatial_Population') %>%
-#   .[grepl('prevalence',.)] %>%
-#   .[!grepl('nomigration',.)]
-
-# creating directories for file storage
-dir.create('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Outputs')
-dir.create('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Outputs/CSV_File_Outputs')
-dir.create('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Outputs/Managed_CSV_Files')
-dir.create('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Outputs/Managed_CSV_Files/Abs_Impacts/')
-dir.create('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Outputs/Managed_CSV_Files/Prop_Impacts/')
+setwd('...')
+files_stored_wd <- dir.create(paste0(getwd(),'/Outputs'))
+dir.create(paste0(getwd(),'/Outputs/CSV_File_Outputs'))
+dir.create(paste0(getwd(),'/Outputs/Managed_CSV_Files'))
+dir.create(paste0(getwd(),'/Outputs/Managed_CSV_Files/Abs_Impacts/'))
+dir.create(paste0(getwd(),'/Outputs/Managed_CSV_Files/Prop_Impacts/'))
 lapply(taxa_list, function(tt) {dir.create(paste0(files_write_wd,'/Outputs/Managed_CSV_Files/Prop_Impacts/',tt))})
 lapply(taxa_list, function(tt) {dir.create(paste0(files_write_wd,'/Outputs/Managed_CSV_Files/Abs_Impacts/',tt))})
 

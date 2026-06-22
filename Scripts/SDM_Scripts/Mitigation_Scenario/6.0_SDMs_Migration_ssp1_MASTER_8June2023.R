@@ -108,7 +108,7 @@ years.loop <-
 
 # List of SSPs
 ssps <-
-  list.files('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/ESH_RCPs', pattern = 'SSP1')
+  list.files(paste0(getwd(),'/ESH_RCPs'), pattern = 'SSP1')
 
 # List of threshold types
 thresholds <- c('prevalence','specsens')

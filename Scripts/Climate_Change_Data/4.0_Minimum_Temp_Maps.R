@@ -12,42 +12,42 @@ library(parallel)
 # Number of cores to parallelise
 n_cores = 10
 
-# New cmip maps
-# new.maps <- list.files('/Users/macuser/Desktop/Min_Temp_CMIP6', full.names = TRUE)
-new.maps <- list.files('/data/pubh-glob2loc/pubh0329/Min_Temp_CMIP6', full.names = TRUE)
-# Directories for old maps
-old.dirs <- 
-  list.dirs('/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data') %>%
-  # list.dirs('/Users/macuser/Desktop/CMIP6_Climate_Data') %>%
-  .[grepl('[0-9]{4,4}-[0-9]{4,4}$',.)]
-
-# Setting working directory
-setwd('/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity')
-
-# Looping through dirs
-for(dir in old.dirs) {
-  # getting ssp of directory
-  ssp = 
-    gsub('.*CMIP6_Climate_Data/','',dir) %>%
-    gsub('/[0-9]{4,4}-[0-9]{4,4}','',.)
-  # Year of directory
-  year = str_extract(dir, '[0-9]{4,4}-[0-9]{4,4}')
-  # If ssp = historic
-  if(ssp %in% 'Historic') {
-    move.files <- new.maps[!grepl('SSP',new.maps)]
-    move.files <- move.files[grepl(year,move.files)]
-  } else {
-    move.files <- new.maps[grepl(ssp,new.maps)]
-    move.files <- move.files[grepl(year,move.files)]
-  }
-  
-  # Making new directory
-  dir.create(paste0(dir,'/Minimum_Temperature'))
-  
-  # And moving files
-  file.copy(from = move.files,
-            to = gsub('/data/pubh-glob2loc/pubh0329/Min_Temp_CMIP6',paste0(dir,'/Minimum_Temperature'),move.files))
-}
+# # New cmip maps
+# # new.maps <- list.files('/Users/macuser/Desktop/Min_Temp_CMIP6', full.names = TRUE)
+# new.maps <- list.files('/data/pubh-glob2loc/pubh0329/Min_Temp_CMIP6', full.names = TRUE)
+# # Directories for old maps
+# old.dirs <- 
+#   list.dirs('/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data') %>%
+#   # list.dirs('/Users/macuser/Desktop/CMIP6_Climate_Data') %>%
+#   .[grepl('[0-9]{4,4}-[0-9]{4,4}$',.)]
+# 
+# # Setting working directory
+# setwd('/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity')
+# 
+# # Looping through dirs
+# for(dir in old.dirs) {
+#   # getting ssp of directory
+#   ssp = 
+#     gsub('.*CMIP6_Climate_Data/','',dir) %>%
+#     gsub('/[0-9]{4,4}-[0-9]{4,4}','',.)
+#   # Year of directory
+#   year = str_extract(dir, '[0-9]{4,4}-[0-9]{4,4}')
+#   # If ssp = historic
+#   if(ssp %in% 'Historic') {
+#     move.files <- new.maps[!grepl('SSP',new.maps)]
+#     move.files <- move.files[grepl(year,move.files)]
+#   } else {
+#     move.files <- new.maps[grepl(ssp,new.maps)]
+#     move.files <- move.files[grepl(year,move.files)]
+#   }
+#   
+#   # Making new directory
+#   dir.create(paste0(dir,'/Minimum_Temperature'))
+#   
+#   # And moving files
+#   file.copy(from = move.files,
+#             to = gsub('/data/pubh-glob2loc/pubh0329/Min_Temp_CMIP6',paste0(dir,'/Minimum_Temperature'),move.files))
+# }
 
 # And reprojecting files
 

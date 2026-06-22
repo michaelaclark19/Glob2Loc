@@ -21,9 +21,7 @@ source(paste0(getwd(),'/Scripts/SDM Scripts/0.0_SDM_Functions_2024.07.13.R'))
 
 # Have multiple working directories because of memory issues
 # Needed to get creative!
-wd.list <-
-  c('/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity',
-    '/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity')
+wd.list <- getwd()
 
 # Function to import list of species
 species.list.function <-
@@ -46,8 +44,8 @@ cat('Species list completed\n')
 
 # Checking for overlaps
 # If in /data/ouce, drop from /data/pubh
-data_ouce <- species.list[grep('ouce-glob2loc',species.list)] %>% gsub('.*Mammals|.*Amphibians|.*Birds|.*Reptiles','',.)
-data_pubh <- species.list[grep('pubh-glob2loc',species.list)] %>% gsub('.*Mammals|.*Amphibians|.*Birds|.*Reptiles','',.)
+data_ouce <- species.list[grep(getwd(),species.list)] %>% gsub('.*Mammals|.*Amphibians|.*Birds|.*Reptiles','',.)
+data_pubh <- species.list[grep(getwd(),species.list)] %>% gsub('.*Mammals|.*Amphibians|.*Birds|.*Reptiles','',.)
 
 if(sum(data_ouce %in% data_pubh) > 0 | sum(data_pubh %in% data_ouce) > 0) {
   # If overlaps, then filter, giving priority to ouce-glob2loc
@@ -59,7 +57,7 @@ if(sum(data_ouce %in% data_pubh) > 0 | sum(data_pubh %in% data_ouce) > 0) {
     do.call(c,
             lapply(data_pubh_drop,
                    function(i) {
-                     return(species.list[grepl('pubh-glob2loc',species.list)] %>%
+                     return(species.list[grepl(getwd(),species.list)] %>%
                               .[grepl(i,.)])
                    }))
   
@@ -88,8 +86,8 @@ species.list.sdms <-
 # If in /data/ouce, drop from /data/pubh
 # Checking for overlaps
 # If in /data/ouce, drop from /data/pubh
-data_ouce <- sdms.list[grep('ouce-glob2loc',sdms.list)] %>% gsub('.*Mammals|.*Amphibians|.*Birds|.*Reptiles','',.)
-data_pubh <- sdms.list[grep('pubh-glob2loc',sdms.list)] %>% gsub('.*Mammals|.*Amphibians|.*Birds|.*Reptiles','',.)
+data_ouce <- sdms.list[grep(getwd(),sdms.list)] %>% gsub('.*Mammals|.*Amphibians|.*Birds|.*Reptiles','',.)
+data_pubh <- sdms.list[grep(getwd(),sdms.list)] %>% gsub('.*Mammals|.*Amphibians|.*Birds|.*Reptiles','',.)
 
 
 cat('Checking overlaps from ouce and pubh directories\n')
@@ -102,7 +100,7 @@ if(sum(data_ouce %in% data_pubh) > 1 | sum(data_pubh %in% data_ouce) > 1) {
     do.call(c,
             lapply(data_pubh_drop,
                    function(i) {
-                     return(sdms.list[grepl('pubh-glob2loc',sdms.list)] %>%
+                     return(sdms.list[grepl(getwd(),sdms.list)] %>%
                               .[grepl(i,.)])
                    }))
   

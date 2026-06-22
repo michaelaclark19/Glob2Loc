@@ -78,25 +78,27 @@ scens.save <- 'All'
 migration <- climate_migration_function('limits')
 
 # List of SSPs
-ssp.list <- list.files(paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs'), pattern = 'SSP')
+ssp.list <- list.files(paste0(getwd(),'/ESH_RCPs'), pattern = 'SSP')
 
 # List of taxa
 taxa.list <- 
-  list.files(paste0(getwd()  %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/',ssp.list[2])) %>% 
+  list.files(paste0(getwd(),'/ESH_RCPs/',ssp.list[1])) %>% 
   .[!grepl('.tif',.)] %>%
   .[!grepl('_',.)]
 
 # List of years to calculate
 years.list <- 
-  list.files(paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/',ssp.list[2],'/',taxa.list[1])) %>%
+  list.files(paste0(getwd(),'/ESH_RCPs/',ssp.list[1],'/',taxa.list[1])) %>%
   str_extract(.,'[0-9]{4,4}') %>%
   unique() %>%
   as.numeric() %>%
-  .[.<=2050]
+  .[.<=2050] %>%
+  .[!is.na(.)] %>%
+  .[.>=2020]
 
 # List of years in ssp climate forecast
 ssp.years <-
-  list.files(paste0(getwd(),'/CMIP6_Climate_Data/SSP2-4.5')) %>%
+  list.files(paste0(getwd(),'/CMIP6_Climate_Data/SSP1-2.6')) %>%
   str_extract_all(.,'[0-9]{4,4}', simplify = TRUE) %>%
   as.data.frame() %>%
   mutate(year_1 = as.numeric(V1),
@@ -107,7 +109,8 @@ ssp.years <-
 
 # List of threshold types
 thresh.list <- 
-  list.files(paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/',ssp.list[2],'/',taxa.list[1]), pattern = 'migrate') %>%
+  list.files(paste0(getwd(),'/ESH_RCPs/',ssp.list[1],'/',taxa.list[1]), pattern = 'migrate') %>% 
+  .[grepl('.tif\\b',.)] %>%
   gsub('_migrate.*','',.) %>%
   gsub('.*[0-9]{4,4}_','',.) %>%
   unique()
@@ -118,10 +121,10 @@ thresh.list <-
 # And world map - e.g. if world map == NA, then all other layers == NA
 
 # Ag expansion
-ag_exp_tifs <- paste0(getwd(),"/Land Forecast Outputs/BAU/Global tifs/")
+ag_exp_tifs <- paste0(getwd(),"/Land Forecast Outputs/EAT_Lancet/Global tifs/")
 
 # Ag intensification
-ag_int_tifs <- paste0(getwd(),"/Ag Intensity Outputs/Cropland Intensity Forecasts/BAU")
+ag_int_tifs <- paste0(getwd(),"/Ag Intensity Outputs/Cropland Intensity Forecasts/EAT_Lancet")
 
 # Urbanisation
 urb_tifs <- paste0(getwd(),"/Urbanization_Forecasts")
@@ -179,7 +182,7 @@ sdm.species <-
   do.call(c,
           lapply(taxa.list,
                  function(i) {
-                   list.files(paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/SSP5-8.5/',i),
+                   list.files(paste0(getwd(),'/ESH_RCPs/SSP1-2.6/',i),
                               pattern = 'csv') %>%
                      .[grepl('migrate',.)] %>% 
                      paste0(i,'/',.) %>%
@@ -229,7 +232,7 @@ species.have <-
   do.call(c,
           lapply(taxa.list,
                  function(i) {
-                   list.files(paste0(getwd(),'/Outputs/CSV_File_Outputs/BAU/',i),
+                   list.files(paste0(getwd(),'/Outputs/CSV_File_Outputs/EAT_Lancet/',i),
                               pattern = 'completed') %>%
                      paste0(i,'/',.)}))
 
@@ -268,7 +271,7 @@ aoh.habs <- hab.prefs.function('yay')
 # Third is species traits
 # Species traits are based on 'commonality' and 'rarity'
 # These are used to assess how species respond to agricultural intensification
-species.traits <- species.traits.function('yay') # This is a wrapper function to avoid clutter - see function file for actual code
+species.traits <- species.traits.function('yay') %>% unique() # This is a wrapper function to avoid clutter - see function file for actual code
 
 # Fourth is climate coefficients
 coef.climate <-
@@ -296,7 +299,7 @@ amp_dispersal_distance_frame = read.csv(paste0(getwd(),"/Other Data Inputs/Amphi
 # Making climate maps for intermediate years
 
 # If statement to check if the climate rasters exist
-if(sum(grepl('2085',list.files(paste0(getwd(),'/CMIP6_Climate_Data/',ssp.list[2],'/Interpolated_Rasters')))) %in% 0) {
+if(sum(grepl('pvar_raster_2045',list.files(paste0(getwd(),'/CMIP6_Climate_Data/',ssp.list[1],'/Interpolated_Rasters')))) %in% 0) {
   for(y in years.list) {
     cat(y,'\n')
     
@@ -316,7 +319,7 @@ if(sum(grepl('2085',list.files(paste0(getwd(),'/CMIP6_Climate_Data/',ssp.list[2]
                min(ssp.years$year_2[ssp.years$mean_year > y]))
       
       # Historic or SSP folder?
-      if(y < 2030) {ssp_folder_1 <- 'Historic'} else {ssp_folder_1 <- 'SSP2-4.5'}
+      if(y < 2030) {ssp_folder_1 <- 'Historic'} else {ssp_folder_1 <- 'SSP1-2.6'}
       
       # Import year 1 rasters
       pwarmest_1 <- 
@@ -340,7 +343,7 @@ if(sum(grepl('2085',list.files(paste0(getwd(),'/CMIP6_Climate_Data/',ssp.list[2]
       
       # Import year 2 rasters
       pwarmest_2 <- 
-        list.files(paste0(getwd(),'/CMIP6_Climate_Data/SSP2-4.5'),
+        list.files(paste0(getwd(),'/CMIP6_Climate_Data/SSP1-2.6'),
                    pattern = year_2,
                    full.names = TRUE) %>%
         paste0(.,'/Managed_Rasters') %>%
@@ -386,7 +389,7 @@ if(sum(grepl('2085',list.files(paste0(getwd(),'/CMIP6_Climate_Data/',ssp.list[2]
       writeRaster(pwarmest_raster,
                   paste0(getwd(),
                          '/CMIP6_Climate_Data/',
-                         ssp.list[2],
+                         ssp.list[1],
                          '/Interpolated_Rasters/pwarmest_raster_',
                          y,
                          '.tif'),
@@ -395,7 +398,7 @@ if(sum(grepl('2085',list.files(paste0(getwd(),'/CMIP6_Climate_Data/',ssp.list[2]
       # pvar raster
       writeRaster(pvar_raster,paste0(getwd(),
                                      '/CMIP6_Climate_Data/',
-                                     ssp.list[2],
+                                     ssp.list[1],
                                      '/Interpolated_Rasters/pvar_raster_',
                                      y,
                                      '.tif'),
@@ -419,7 +422,7 @@ dir.create(patch.estimate.dir)
 dir.create(csv.estimate.dir)
 
 # Creating directories for updated map files
-ssps_tmp <- paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/',ssp.list,'/')
+ssps_tmp <- paste0(getwd(),'/ESH_RCPs/',ssp.list,'/')
 taxas_tmp <- paste0(taxa.list,'_Updated')
 
 lapply(apply(expand.grid(ssps_tmp, taxas_tmp), 1, paste, collapse=""),
@@ -443,7 +446,7 @@ stressors <-
 species_completed <-
   do.call(c,
           lapply(
-            list.files('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Outputs/CSV_File_Outputs/BAU',
+            list.files(paste0(getwd(),'/Outputs/CSV_File_Outputs/EAT_Lancet'),
                        full.names = TRUE) %>%
               .[!grepl('Old',.)],
             list.files, full.names = TRUE, pattern = 'completed')) %>%
@@ -477,7 +480,7 @@ species.frame.full <-
 # getting coo data
 # Use this to limit which species to incorporate in the analysis
 coo_data <-
-  read.csv('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/COO_Data/NewCountryOfOccurrenceData.csv') %>%
+  read.csv(paste0(getwd(),'/COO_Data/NewCountryOfOccurrenceData.csv')) %>%
   mutate(region = countrycode(ISO3,origin = 'iso3c',destination = 'region')) %>%
   filter(taxon %in% 'Birds') %>%
   # filter(grepl('Vulpes',species)) %>%
@@ -514,7 +517,7 @@ cat(nrow(coo_data),'\n')
 # Python is used to identify patches
 # So need to do this in a loop, rather than a big function
 
-scenarios.list <- 'BAU'
+scenarios.list <- 'EAT_Lancet'
 
 ###
 # And gap filling body mass data where needed
@@ -534,7 +537,7 @@ species_loop_function <-
     species_tmp_check <-
       do.call(c,
               lapply(
-                list.files(paste0(csv.estimate.dir,'/BAU'),
+                list.files(paste0(csv.estimate.dir,'/EAT_Lancet'),
                            full.names = TRUE) %>%
                   .[!grepl('Old',.)],
                 list.files, full.names = TRUE, pattern = 'completed')) %>%
@@ -545,7 +548,7 @@ species_loop_function <-
     
     species_tmp_check <-
       species_tmp_check %>%
-      gsub('.*CSV_File_Outputs/BAU/','',.) %>%
+      gsub('.*CSV_File_Outputs/EAT_Lancet/','',.) %>%
       # gsub(migration['species_completed_year.search'],'',.) %>%
       .[grep(y,.)] %>%
       .[grep(ssp,.)] %>%
@@ -575,7 +578,7 @@ species_loop_function <-
       # Loading SDM map
       if(species.frame$Have_SDM[k] %in% 1) {
         sdm_map_file <-
-          list.files(paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/',ssp,'/',species.frame$taxon[k]), 
+          list.files(paste0(getwd(),'/ESH_RCPs/',ssp,'/',species.frame$taxon[k]), 
                      # pattern = gsub(paste0(species.frame$taxon[k],'/'),'',species.frame$Species[k]),
                      # pattern = species.frame$Species[k],
                      full.names = TRUE) %>%
@@ -638,7 +641,7 @@ species_loop_function <-
             
             # Current 2020 map
             sdm_map_file_current <- 
-              list.files(paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/',ssp,'/',species.frame$taxon[k]), 
+              list.files(paste0(getwd(),'/ESH_RCPs/',ssp,'/',species.frame$taxon[k]), 
                          # pattern = gsub(paste0(species.frame$taxon[k],'/'),'',species.frame$Species[k]),
                          # pattern = species.frame$Species[k],
                          full.names = TRUE) %>%
@@ -1397,8 +1400,8 @@ species_loop_function <-
           extent(scen_density_raster) <- extent(sdm_map)
           
           # Saving raster outputs
-          #writeRaster(scen_density_raster,paste0(getwd(),'/Outputs/Raster_Outputs/BAU/',species.frame$taxon[k],'/pop_density_',species.frame$binomial[k],'_',t,'_',y,'_',scen_r,'.tif'),overwrite=TRUE)
-          #writeRaster(species.raster.loss,paste0(getwd(),'/Outputs/Raster_Outputs/BAU/',species.frame$taxon[k],'/hab_availability_',species.frame$binomial[k],'_',t,'_',y,'_',scen_r,'.tif'),overwrite=TRUE)
+          #writeRaster(scen_density_raster,paste0(getwd(),'/Outputs/Raster_Outputs/EAT_Lancet/',species.frame$taxon[k],'/pop_density_',species.frame$binomial[k],'_',t,'_',y,'_',scen_r,'.tif'),overwrite=TRUE)
+          #writeRaster(species.raster.loss,paste0(getwd(),'/Outputs/Raster_Outputs/EAT_Lancet/',species.frame$taxon[k],'/hab_availability_',species.frame$binomial[k],'_',t,'_',y,'_',scen_r,'.tif'),overwrite=TRUE)
           
           # Getting stats by patch
           # This includes habitat area and population abundance
@@ -1513,6 +1516,29 @@ species_loop_function <-
 } # End function that loops over species
 
 
+# Reimporting SNAP Raster
+# Used to limit crop and pasture extent, to be safe
+Snap_Raster <- raster(paste0(getwd(),'/Global Mollweide Maps/MollweideCountryID_1.5km.tif'))
+
+# Getting list of species endemic to biodiversity hotspots
+species_by_biodiv_hotspot <- read.csv(paste0(getwd(),'/Analyses/species_by_biodiv_hotspot_esh_maps.csv'))
+
+  # endemic to hotspots
+  species_by_biodiv_hotspot <-
+    species_by_biodiv_hotspot %>%
+    distinct() %>%
+    filter(!(ecoregion_id %in% -99)) %>%
+    #dplyr::group_by(species,taxa) %>%
+    #dplyr::summarise(prop_in_hotspot = sum(prop_cells)) %>%
+    #distinct() %>%
+    #filter(prop_in_hotspot >=1) %>%
+    # filter(ecoregion_id %in% c(1,8,9)) %>%
+    dplyr::group_by(species,taxa) %>%
+    dplyr::summarise(prop_cells = sum(prop_cells,na.rm=TRUE)) %>%
+    filter(prop_cells %in% 1)
+
+
+
 # Start loop
 for(i in scenarios.list) { # Loop through scenarios
   
@@ -1545,11 +1571,11 @@ for(i in scenarios.list) { # Loop through scenarios
   # Looping through ssps
   # Using SSP2 for BAU
   # With SSP 3 for sensitivity for a subset of species
-  for(ssp in ssp.list[2]) {
+  for(ssp in ssp.list[1]) {
     
     # Loop through years
     # for(y in years.list[years.list > 2005 & years.list < 2055]) { # Only 2010 to 2050. Have climate maps to 2090
-    for(y in c(2045)) { # For testing
+    for(y in c(2020,2050)) { # For testing
       # Checking progress
       cat(paste("Processing",i,y,'\n'))
       
@@ -1559,10 +1585,14 @@ for(i in scenarios.list) { # Loop through scenarios
         pasture_raster <- raster(list.files(ag_exp_tifs, full.names = TRUE, pattern = 'past.*mean') %>% .[grep(paste0(2020,'.tif'),.)])
         urban_raster = raster(list.files(urb_tifs, full.names = TRUE) %>% .[grep(2020,.)])
         intens_raster <- raster(list.files(ag_int_tifs, full.names = TRUE) %>% .[grep(paste0(2020,'.tif'),.)])
-        
+       
+
+	crop_raster[is.na(Snap_Raster)] <- NA
+	pasture_raster[is.na(Snap_Raster)] <- NA
+
         # No intensity if no cropland
-        # intens_raster[crop_raster %in% 0] <- 0
-        # intens_raster[is.na(crop_raster)] <- NA
+        intens_raster[crop_raster %in% 0] <- 0
+        intens_raster[is.na(crop_raster)] <- NA
         
       } else { # If not 2020
         crop_raster <- raster(list.files(ag_exp_tifs, full.names = TRUE, pattern = 'crop.*mean') %>% .[grep(paste0(y,'.tif'),.)])
@@ -1570,9 +1600,13 @@ for(i in scenarios.list) { # Loop through scenarios
         urban_raster = raster(list.files(urb_tifs, full.names = TRUE) %>% .[grep(y,.)])
         intens_raster <- raster(list.files(ag_int_tifs, full.names = TRUE) %>% .[grep(paste0(y,'.tif'),.)])
         
+
+	crop_raster[is.na(Snap_Raster)] <- NA
+        pasture_raster[is.na(Snap_Raster)] <- NA
+
         # No crop intensity if no crop
-        # intens_raster[crop_raster %in% 0] <- 0
-        # intens_raster[is.na(crop_raster)] <- NA
+        intens_raster[crop_raster %in% 0] <- 0
+        intens_raster[is.na(crop_raster)] <- NA
         
       } # End import raster maps
       
@@ -1583,8 +1617,11 @@ for(i in scenarios.list) { # Loop through scenarios
       intens_raster_2020 <- raster(list.files(ag_int_tifs, full.names = TRUE) %>% .[grep(paste0(2020,'.tif'),.)])
       
       # No intensity if no cropland
-      # intens_raster_2010[crop_raster_2010 %in% 0] <- 0
-      # intens_raster_2010[is.na(crop_raster_2010)] <- NA
+      crop_raster_2020[is.na(Snap_Raster)] <- NA
+      pasture_raster_2020[is.na(Snap_Raster)] <- NA
+      
+      intens_raster_2020[crop_raster_2020 %in% 0] <- 0
+      intens_raster_2020[is.na(crop_raster_2020)] <- NA
       
       # Importing climate rasters
       # These are used to estimate the population density of different species
@@ -1670,7 +1707,7 @@ for(i in scenarios.list) { # Loop through scenarios
       # Which species have been completed in this year
       species_completed_year <-
         species_completed %>%
-        gsub('.*CSV_File_Outputs/BAU/','',.) %>%
+        gsub('.*CSV_File_Outputs/EAT_Lancet/','',.) %>%
         #gsub(migration['species_completed_year.search'],'',.) %>%
         .[grep(y,.)] %>%
         .[grep(ssp,.)] %>%
@@ -1683,7 +1720,8 @@ for(i in scenarios.list) { # Loop through scenarios
         species.frame.full %>%
         # filter(binomial %in% coo_data$species) %>% # Uncomment this if you are running for limited set of species
 	# filter(!(binomial %in% ssa_species_have))
-        filter(!(Species %in% species_completed_year))#%>%
+        filter(!(Species %in% species_completed_year)) %>%
+	 filter(Species %in% paste0(species_by_biodiv_hotspot$taxa,'/',species_by_biodiv_hotspot$species)) 
         #filter(grepl('Brachycephalus',Species))
         # filter(grepl('Leopardus_wiedii',Species))
 

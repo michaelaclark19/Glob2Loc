@@ -26,7 +26,7 @@ years <-
   .[!grepl('Interpolated',.)]
 
 # getting crop raster for gdd weighting
-crop_2010 <- raster('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/ESA LandCov Maps/Crop2010_Corrected_GlobCov.tif')
+crop_2010 <- raster(paste0(getwd(),'/ESA LandCov Maps/Crop2010_Corrected_GlobCov.tif'))
 
 # Looping through GDDs and SSPs and years
 for(gdd in c('5C','10C')) {
@@ -41,7 +41,7 @@ for(gdd in c('5C','10C')) {
       # need to load historic if y is 2021
       if(y %in% years[1]) {
         t0_raster <- 
-          list.files('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/CMIP6_Climate_Data/Historic/1995-2014/Managed_Rasters',
+          list.files(paste0(getwd(),'/CMIP6_Climate_Data/Historic/1995-2014/Managed_Rasters'),
                      pattern = 'GDD_', full.names = TRUE) %>%
           .[grepl('_Mollweide.tif',.)] %>% # Need rasters project in mollweide
           .[grepl(gdd,.)] %>% # need raster for appropriate gdd scenario

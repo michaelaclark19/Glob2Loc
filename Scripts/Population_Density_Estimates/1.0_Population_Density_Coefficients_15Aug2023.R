@@ -30,7 +30,7 @@ setwd('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity')
 
 # Only need to do this first part once
 # Putting an if statement here to save time
-if('SantiniModellingData_12May2023.csv' %in% list.files(paste0(getwd(),'/Other Data Inputs/Pop Density Inputs'))) { # if it exists
+if(!('SantiniModellingData_12May2023.csv' %in% list.files(paste0(getwd(),'/Other Data Inputs/Pop Density Inputs')))) { # if it exists
   # Do all the below
   # Load density data from original data frame ----
   # tetra_data <- read_csv(paste0(getwd(),"/Other Data Inputs/Pop Density Inputs/TetraDENSITY Copy2.csv")) %>%
@@ -62,7 +62,7 @@ if('SantiniModellingData_12May2023.csv' %in% list.files(paste0(getwd(),'/Other D
   # Importing data for current climate ----
   temp_mean <- raster(paste0(getwd(),'/CMIP6_Climate_Data/Historic/1995-2014/Managed_Rasters/Mean_annual_temp.tif'))
   precip_var <- raster(paste0(getwd(),'/CMIP6_Climate_Data/Historic/1995-2014/Managed_Rasters/Variance_of_precipitation.tif'))
-  precip_warmest <- raster(paste0(getwd(),'/CMIP6_Climate_Data/Historic/1995-2014/Managed_Rasters/Precip_in_warmest_quarter.tiff'))
+  precip_warmest <- raster(paste0(getwd(),'/CMIP6_Climate_Data/Historic/1995-2014/Managed_Rasters/Precip_in_warmest_quarter.tif'))
   temp_var <- raster(paste0(getwd(),'/CMIP6_Climate_Data/Historic/1995-2014/Managed_Rasters/Variance_of_temperature.tif'))
   npp <- raster(paste0(getwd(),"/Other Data Inputs/Pop Density Inputs/npp_santini.tif"))
   
@@ -77,7 +77,7 @@ if('SantiniModellingData_12May2023.csv' %in% list.files(paste0(getwd(),'/Other D
   mam.richness <- raster(paste0(getwd(),"/Other Data Inputs/Species Richness Rasters/Mammals_Richness.tif"))
   bird.richness <- raster(paste0(getwd(),"/Other Data Inputs/Species Richness Rasters/Birds_Richness.tif"))
   amp.richness <- raster(paste0(getwd(),"/Other Data Inputs/Species Richness Rasters/Amphibians_Richness.tif"))
- rep.richness <- raster(paste0(getwd(),"/Other Data Inputs/Species Richness Rasters/Reptile_Richness.tif")) 
+  rep.richness <- raster(paste0(getwd(),"/Other Data Inputs/Species Richness Rasters/Reptile_Richness.tif")) 
   # For local computer...
   #mam.richness <- raster("/Users/macuser/Desktop/Species_Richness_Rasters/Mammals_Richness.tif")
   #bird.richness <- raster("/Users/macuser/Desktop/Species_Richness_Rasters/Birds_Richness.tif")

@@ -8,10 +8,13 @@
 library(plyr)
 library(dplyr)
 
+# Setting working directory
+setwd('...')
+
 
 # list of files for overall model accuracy
 files_list <- 
-  list.files(path = '/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/ESH_RCPs/Weighted_Threshold_Accuracy',
+  list.files(path = paste0(getwd(),'/ESH_RCPs/Weighted_Threshold_Accuracy'),
              full.names = TRUE)
 files_out <-
   do.call(c,lapply(files_list, list.files, full.names = TRUE))
@@ -52,10 +55,10 @@ stacked_files %>%
 
 # writing file
 write.csv(stacked_files,
-          '/data/ouce-glob2loc/pubh0329/stacked_sdm_accuracy.csv',
+          paste0(getwd(),'/Analyses/stacked_sdm_accuracy.csv'),
           row.names = FALSE)
 
-tmp <- read.csv('/data/ouce-glob2loc/pubh0329/stacked_sdm_accuracy.csv')
+tmp <- read.csv(paste0(getwd(),'/Analyses//stacked_sdm_accuracy.csv'))
 
 stacked_out <-
   tmp %>%

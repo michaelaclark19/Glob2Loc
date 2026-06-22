@@ -86,14 +86,14 @@ country_rast_cropped[!is.na(country_rast_cropped)] <- 0
 # Getting body mass data
 # bird/amp/mammal body mass
 body_mass <-
-  read.csv(paste0(getwd() %>% gsub('pubh-glob2loc','ouce-glob2loc',.),"/Other Data Inputs/Pop Density Inputs/Body Mass Estimates 20February2020 Updated Taxonomy.csv"), stringsAsFactors = FALSE) %>% # Importing body mass file
+  read.csv(paste0(getwd(),"/Other Data Inputs/Pop Density Inputs/Body Mass Estimates 20February2020 Updated Taxonomy.csv"), stringsAsFactors = FALSE) %>% # Importing body mass file
   dplyr::select(order = Order, family = Family, genus = Genus, species_merge = binomial, est_mass_kg, Family_Mass_kg,
 Genus_Mass_kg) %>%  # Only keeping necessary columns
   mutate(binomial = species_merge)
 
 # reptile body mass
 rep_body_mass <-
-  read.csv('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Other Data Inputs/Pop Density Inputs/reptile_body_masses.csv',
+  read.csv(paste0(getwd(),'/Other Data Inputs/Pop Density Inputs/reptile_body_masses.csv'),
            stringsAsFactors = FALSE) %>%
   dplyr::rename(order = Order,
                 family = Family) %>%
@@ -206,7 +206,7 @@ for(taxa in taxa_list) { # Looping through taxa
   #             full.names = TRUE)
 
 	cmd <-
-		paste0("find /data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Outputs/Raster_Outputs/BAU/",taxa,"/ -type f")
+		paste0("find /.../Outputs/Raster_Outputs/BAU/",taxa,"/ -type f")
  
       file_list_taxa <-  
 	system(

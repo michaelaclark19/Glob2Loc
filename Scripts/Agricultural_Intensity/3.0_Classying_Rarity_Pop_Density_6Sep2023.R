@@ -66,7 +66,7 @@ tetra_density <-
 
 # list of species with AOH
 # Getting list of species with AOH maps (e.g. all species)
-taxa.list <- list.files(paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/SSP2-4.5')) %>% .[!grepl('.tif',.)] %>% .[!grepl('Climate',.)]
+taxa.list <- list.files(paste0(getwd(),'/ESH_Tifs_12Oct/')) %>% .[!grepl('.tif',.)] %>% .[!grepl('Climate',.)]
 
 aoh.species <-
   do.call(c,
@@ -97,10 +97,10 @@ species.frame <-
 
 # Getting climate coefficients - these are fixed effects for e.g. body mass, climate variables, etc
 coef.climate <-
-  rbind(read.csv(paste0(getwd() %>% gsub('pubh-glob2loc','ouce-glob2loc',.),"/Population Density Estimates/RefittedSantiniModelCoefficients_fixed_Mammals.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Mammals'),
-        read.csv(paste0(getwd() %>% gsub('pubh-glob2loc','ouce-glob2loc',.),"/Population Density Estimates/RefittedSantiniModelCoefficients_fixed_Amphibians.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Amphibians'),
-        read.csv(paste0(getwd() %>% gsub('pubh-glob2loc','ouce-glob2loc',.),"/Population Density Estimates/RefittedSantiniModelCoefficients_fixed_Birds.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Birds'),
-        read.csv(paste0(getwd() %>% gsub('pubh-glob2loc','ouce-glob2loc',.),"/Population Density Estimates/RefittedSantiniModelCoefficients_fixed_Reptiles.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Reptiles'))
+  rbind(read.csv(paste0(getwd(),"/Population Density Estimates/RefittedSantiniModelCoefficients_fixed_Mammals.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Mammals'),
+        read.csv(paste0(getwd(),"/Population Density Estimates/RefittedSantiniModelCoefficients_fixed_Amphibians.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Amphibians'),
+        read.csv(paste0(getwd(),"/Population Density Estimates/RefittedSantiniModelCoefficients_fixed_Birds.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Birds'),
+        read.csv(paste0(getwd(),"/Population Density Estimates/RefittedSantiniModelCoefficients_fixed_Reptiles.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Reptiles'))
 
 # function to make this work
 density_function <- 

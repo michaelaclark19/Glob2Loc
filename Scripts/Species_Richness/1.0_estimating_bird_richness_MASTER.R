@@ -30,7 +30,7 @@ template[!is.na(template)] <- 0
 #   }
 # 
 # # testing with chameleons
-reptile_maps_check <- reptile_maps[grepl('Calumma_',reptile_maps)]
+# reptile_maps_check <- reptile_maps[grepl('Calumma_',reptile_maps)]
 # 
 # # checking time
 # # about 3 species/min
@@ -85,8 +85,8 @@ richness_fun <-
     
     # saving data frame
     write.csv(template_df,
-              paste0('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Other Data Inputs/Species Richness Rasters/bird_richness_df_',z,'.csv'),
-    row.names = FALSE)
+              paste0(getwd(),'/Other Data Inputs/Species Richness Rasters/bird_richness_df_',z,'.csv'),
+              row.names = FALSE)
     
     # return(template_df)
   }

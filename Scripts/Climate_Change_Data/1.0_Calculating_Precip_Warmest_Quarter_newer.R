@@ -21,7 +21,7 @@ n_cores = 10
 setwd('/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity')
 
 # Getting a template raster for reprojecting, etc
-raster.files <- list.files(paste0(getwd(),'/CMIP6_Climate_Data'))
+raster.files <- list.files(paste0(getwd(),'/CMIP6_Climate_Data/Historic/1995-2014/Mean_temp'), full.names = TRUE)
 # Template raster
 template.raster <- raster(raster.files[1])
 
@@ -93,7 +93,7 @@ mclapply.function <-
       # Stacking and extracting precip and temp data
       # Precip
       precip.df <- raster.stack.fun(list.files(paste0(i,'/Total_precip'),full.names=TRUE))
-    precip.df <- precip.df * c(31,28.25,31,30,31,30,31,31,30,31,30,31)
+      precip.df <- precip.df * c(31,28.25,31,30,31,30,31,31,30,31,30,31)
       # Temperature
       temp.df <- raster.stack.fun(list.files(paste0(i,'/Mean_temp'),full.names=TRUE))
       
@@ -121,5 +121,3 @@ tmp <- list.dirs(paste0(getwd(),"/CMIP6_Climate_Data")) %>% .[grepl('[0-9]{4,4}$
 mclapply(tmp,mclapply.function,mc.cores=n_cores)
 
 # END
-   
-

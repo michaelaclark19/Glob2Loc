@@ -8,11 +8,11 @@ library(viridis)
 library(terra)
 
 # loading rasters
-crop_2020 <- rast('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Land_Forecasting_Outputs/crop_mean2015_2020.tif')
-crop_2050 <- rast('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Land_Forecasting_Outputs/crop_mean2045_2050.tif')
+crop_2020 <- rast(paste0(getwd(),'/Land Forecast Outputs/BAU/Global tifs/crop_mean2015_2020.tif'))
+crop_2050 <- rast(paste0(getwd(),'/Land Forecast Outputs/BAU/Global tifs/crop_mean2045_2050.tif'))
 
-past_2020 <- rast('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Land_Forecasting_Outputs/pasture_mean2015_2020.tif')
-past_2050 <- rast('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Land_Forecasting_Outputs/pasture_mean2045_2050.tif')
+past_2020 <- rast(paste0(getwd(),'/Land Forecast Outputs/BAU/Global tifs/pasture_mean2015_2020.tif'))
+past_2050 <- rast(paste0(getwd(),'/Land Forecast Outputs/BAU/Global tifs/pasture_mean2045_2050.tif'))
 
 ag_2020 <- crop_2020 + past_2020
 ag_2050 <- crop_2050 + past_2050
@@ -23,7 +23,7 @@ past_delta <- past_2050 - past_2020
 ag_delta <- ag_2050 - ag_2020
 
 # getting map of countries
-borders <- vect('/Users/michael/Downloads/TM_WORLD_BORDERS-0.3/TM_WORLD_BORDERS-0.3.shp')
+borders <- vect(paste0(getwd(),'/TM_WORLD_BORDERS-0.3/TM_WORLD_BORDERS-0.3.shp'))
 borders <- project(borders,crop_2020)
 
 # Colour palette
@@ -99,7 +99,7 @@ plot_function <-
 ###
 # plotting
 dev.off()
-pdf(paste0('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Figures and Tables/Figures/FigS3_AgExpansion_',Sys.Date(),'.pdf'),
+pdf(paste0(getwd(),'/Figures and Tables/Figures/FigS3_AgExpansion_',Sys.Date(),'.pdf'),
     width = 10, height = 8)
 par(mfrow = c(3,2))
 

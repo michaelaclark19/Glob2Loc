@@ -8,11 +8,11 @@ library(viridis)
 library(terra)
 
 # loading rasters
-int_2020 <- rast('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Land_Forecasting_Outputs/Cropland_Intensity_2015_2020.tif')
-int_2050 <- rast('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Land_Forecasting_Outputs/Cropland_Intensity_2045_2050.tif')
+int_2020 <- rast(paste0(getwd(),'/Ag Intensity Outputs/Cropland Intensity Forecasts/BAU/Cropland_Intensity_2015_2020.tif'))
+int_2050 <- rast(paste0(getwd(),'/Ag Intensity Outputs/Cropland Intensity Forecasts/BAU/Cropland_Intensity_2045_2050.tif'))
 
 # Getting other land areas
-crop_2020 <- rast('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Land_Forecasting_Outputs/crop_mean2015_2020.tif')
+crop_2020 <- rast(paste0(getwd(),'/Land Forecast Outputs/BAU/Global tifs/crop_mean2015_2020.tif'))
 
 int_2020[!is.na(crop_2020) & is.na(int_2020)] <- 0
 int_2050[!is.na(crop_2020) & is.na(int_2050)] <- 0
@@ -85,7 +85,7 @@ levels(int_2050) <- lvl
 ###
 # plotting
 dev.off()
-pdf(paste0('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Figures and Tables/Figures/FigS6_AgIntensity_',Sys.Date(),'.pdf'),
+pdf(paste0(getwd(),'/Figures and Tables/Figures/FigS6_AgIntensity_',Sys.Date(),'.pdf'),
     width = 12, height = 4)
 par(mfrow = c(1,3))
 
@@ -157,5 +157,5 @@ out_df <-
               values_from = count)
 
 write.csv(out_df,
-          paste0('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Figures and Tables/Tables/TableS3_CroplandIntensity_',Sys.Date(),'.csv'),
+          paste0(getwd(),'/Figures and Tables/Tables/TableS3_CroplandIntensity_',Sys.Date(),'.csv'),
           row.names = FALSE)

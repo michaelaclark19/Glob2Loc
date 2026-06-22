@@ -33,7 +33,7 @@ library(sf)
 
 # Habitat 2020
 tot_hab_2020 <-
-  list.files(path = '/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/file_transfers_brazil_abs',
+  list.files(path = paste0(getwd(),'/Files_For_Fig4'),
          pattern = 'hab_avail',
          full.names = TRUE) %>%
   .[grepl('_2020',.)] %>%
@@ -43,7 +43,7 @@ tot_hab_2020 <-
 
 # Habitat 2050
 tot_hab_2050 <-
-  list.files(path = '/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/file_transfers_brazil_abs',
+  list.files(path = paste0(getwd(),'/Files_For_Fig4'),
              pattern = 'hab_avail',
              full.names = TRUE) %>%
   .[grepl('_2050',.)] %>%
@@ -54,7 +54,7 @@ tot_hab_2050 <-
 
 # Richness 2020
 tot_richness_2020 <-
-  list.files(path = '/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/file_transfers_brazil_abs',
+  list.files(path = paste0(getwd(),'/Files_For_Fig4/'),
              pattern = 'hab_avail',
              full.names = TRUE) %>%
   .[grepl('_2020',.)] %>%
@@ -64,7 +64,7 @@ tot_richness_2020 <-
 
 # Richness 2050
 tot_richness_2050 <-
-  list.files(path = '/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/file_transfers_brazil_abs',
+  list.files(path = paste0(getwd(),'/Files_For_Fig4/'),
              pattern = 'hab_avail',
              full.names = TRUE) %>%
   .[grepl('_2020',.)] %>%
@@ -76,7 +76,7 @@ tot_richness_2050 <-
 # Map --- difference in total habitat
 dif_tot_hab <- tot_hab_2050 - tot_hab_2020
 
-country_id <- rast('/Users/michael/Desktop/MollweideCountryID_1.5km.tif')
+country_id <- rast(paste0(getwd(),'/Global Mollweide Maps/MollweideCountryID_1.5km.tif'))
 country_id <- crop(country_id, dif_tot_hab)
 country_id[country_id != 76] <- NA
 
@@ -131,7 +131,7 @@ brazil_states <- ne_states(country = 'Brazil', returnclass = 'sv')
 brazil_states <- project(brazil_states, dif_tot_hab)
 
 # Getting shapefile for cerrado
-ecoregions_vect <- vect('/Users/michael/Downloads/Terrestrial_Ecoregions/Terrestrial_Ecoregions.shp')
+ecoregions_vect <- vect(paste0(getwd(),'/Ecoregions_Feb2023/Terrestrial_Ecoregions/Terrestrial_Ecoregions.shp'))
 cerrado_vect <- ecoregions_vect[ecoregions_vect$ECO_ID_U %in% 10438]
 cerrado_vect <- project(cerrado_vect, dif_tot_hab)
 
@@ -274,7 +274,7 @@ dev.off()
 # Panel b --- overlap / no overlap between stressors
 # Abundance in 2020
 abundance_2020 <-
-  list.files(path = '/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/file_transfers_brazil_abs', full.names = TRUE) %>%
+  list.files(path = paste0(getwd(),'/Files_For_Fig4/'), full.names = TRUE) %>%
   .[grepl(pattern = '2020',.)] %>%
   .[grepl(pattern = 'pop_dens',.)] %>%
   .[!grepl(pattern = 'richness',.)] %>%
@@ -290,7 +290,7 @@ scen_list <-
 
 
 ###
-country_id <- rast('/Users/michael/Desktop/MollweideCountryID_1.5km.tif')
+country_id <- rast(paste0(getwd(),'/Global Mollweide Maps/MollweideCountryID_1.5km.tif'))
 country_id <- crop(country_id, abundance_2020)
 country_id[country_id != 76] <- NA
 
@@ -304,7 +304,7 @@ col_list <-
 # par(mfrow = c(1,1))
 for(ss in scen_list) {
   tmp_hab <-
-    list.files(path = '/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/file_transfers_brazil_abs', full.names = TRUE) %>%
+    list.files(path = paste0(getwd(),'/Files_For_Fig4/'), full.names = TRUE) %>%
     .[grepl(pattern = '2050',.)] %>%
     .[grepl(pattern = 'pop_',.)] %>%
     .[!grepl(pattern = 'richness',.)] %>%
@@ -496,7 +496,7 @@ scen_list <-
 
 
 ###
-country_id <- rast('/Users/michael/Desktop/MollweideCountryID_1.5km.tif')
+country_id <- rast(paste0(getwd(),'/Global Mollweide Maps/MollweideCountryID_1.5km.tif'))
 country_id <- crop(country_id, abundance_2020)
 country_id[country_id != 76] <- NA
 
@@ -504,7 +504,7 @@ country_id[country_id != 76] <- NA
 # par(mfrow = c(1,1))
 for(ss in scen_list) {
   tmp_hab <-
-    list.files(path = '/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/file_transfers_brazil_abs', full.names = TRUE) %>%
+    list.files(path = paste0(getwd(),'/Files_For_Fig4/'), full.names = TRUE) %>%
     .[grepl(pattern = '2050',.)] %>%
     .[grepl(pattern = 'pop_',.)] %>%
     .[!grepl(pattern = 'richness',.)] %>%
@@ -514,7 +514,7 @@ for(ss in scen_list) {
     # app(sum,na.rm=TRUE)
   
   hab_2020 <-
-    list.files(path = '/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/file_transfers_brazil_abs', full.names = TRUE) %>%
+    list.files(path = paste0(getwd(),'/Files_For_Fig4/'), full.names = TRUE) %>%
     .[grepl(pattern = '2020',.)] %>%
     .[grepl(pattern = 'pop_',.)] %>%
     .[!grepl(pattern = 'richness',.)] %>%
@@ -743,7 +743,7 @@ out_df_eat <-
 ###
 # For specices endemic to the atlantic forest
 biodiv_hotspots <-
-  read.csv('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/species_by_biodiv_hotspot_esh_maps.csv') %>%
+  read.csv(paste0(getwd(),'/Analyses/species_by_biodiv_hotspot_esh_maps.csv')) %>%
   filter(ecoregion_id > 0) %>%
   dplyr::group_by(taxa,species) %>%
   dplyr::summarise(prop_cells = sum(prop_cells,na.rm = TRUE)) %>%
@@ -752,10 +752,10 @@ biodiv_hotspots <-
   dplyr::ungroup() %>%
   dplyr::select(-c(taxa,species))
 
-hotspots_vect <- vect('/Users/michael/Downloads/hotspots_2016_1/hotspots_2016_1.shp')
-ecoregions_vect <- vect('/Users/michael/Downloads/Terrestrial_Ecoregions/Terrestrial_Ecoregions.shp')
-hotspots_map <- raster('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Ecoregions_Feb2023/Biodiversity_Hotspots_Raster.tif')
-realms_map <- raster('/Users/michael/Desktop/Research/Glob2Loc/Ecoregions_Feb2023/realms_raster.tif')
+hotspots_vect <- vect(paste0(getwd(),'/Ecoregions_Feb2023/hotspots_2016_1/hotspots_2016_1.shp'))
+ecoregions_vect <- vect(paste0(getwd(),'/Ecoregions_Feb2023/Terrestrial_Ecoregions/Terrestrial_Ecoregions.shp'))
+hotspots_map <- raster(paste0(getwd(),'/Ecoregions_Feb2023/Biodiversity_Hotspots_Raster.tif'))
+realms_map <- raster(paste0(getwd(),'/Ecoregions_Feb2023/realms_raster.tif'))
 
 hotspots_realms_df <-
   data.frame(hotspot = getValues(hotspots_map),
@@ -850,7 +850,7 @@ out_df_merged <-
   filter(!is.na(tot_area_eat)) %>% # Removing species not endemic to biodiversity hotspots
   filter(binomial %in% biodiv_hotspots$binomial) %>%
   left_join(.,
-            read.csv('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/species_by_ecoregion_esh_maps.csv') %>%
+            read.csv(paste0(getwd(),'/Ecoregions_Feb2023/species_by_ecoregion_esh_maps.csv')) %>%
               mutate(species = gsub('_[A-Z].*|_[0-9].*','',species)) %>%
               mutate(binomial = paste0(taxa,'/',species)) %>%
               dplyr::select(binomial, ecoregion_id, prop_cells)) %>%
@@ -860,7 +860,7 @@ out_df_merged <-
   dplyr::select(-c(ecoregion_id,prop_cells)) %>%
   distinct() %>%
   left_join(.,
-            read.csv('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/species_by_biodiv_hotspot_esh_maps.csv') %>%
+            read.csv(paste0(getwd(),'/Analyses/species_by_biodiv_hotspot_esh_maps.csv')) %>%
               mutate(binomial = paste0(taxa,'/',species)) %>%
               dplyr::select(binomial, hotspot_id = ecoregion_id, prop_cells_hotspot = prop_cells) %>%
               filter(hotspot_id > -99) %>%

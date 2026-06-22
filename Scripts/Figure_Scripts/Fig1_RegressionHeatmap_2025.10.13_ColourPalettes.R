@@ -22,7 +22,7 @@ setwd("/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity")
 
 ###
 # Getting list of realms and biomes
-tmp_sf <- read_sf('/Users/michael/Downloads/Terrestrial_Ecoregions/Terrestrial_Ecoregions.shp')
+tmp_sf <- read_sf(paste0(getwd(),'/Ecoregions_Feb2023/Terrestrial_Ecoregions/Terrestrial_Ecoregions.shp'))
 
 # Converting into a data frame
 realms_biomes <-
@@ -33,7 +33,7 @@ realms_biomes <-
 ###
 # Getting species-level outcomes
 file_list <-
-  list.files(paste0(getwd(),'/Aggregated_CSV_Files/'),
+  list.files(paste0(getwd(),'/Outputs/Aggregated_CSV_Files/'),
              pattern = 'Prop',
              full.names = TRUE) %>%
   .[grepl('prevalence',.)] %>%
@@ -63,7 +63,7 @@ species_list <-
 ###
 # Realm / biome combinations with >25% species habitat
 realm_biome_species <- 
-  read_csv('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/species_by_ecoregion_esh_maps.csv') %>%
+  read_csv(paste0(getwd(),'/Ecoregions_Feb2023/species_by_ecoregion_esh_maps.csv')) %>%
   mutate(species = gsub('_[A-Z].*|_[0-9].*','',species)) %>%
   mutate(binomial = paste0(taxa,'/',species)) %>%
   dplyr::select(-c(species,taxa)) %>%
@@ -99,7 +99,7 @@ out_df_2050 <-
 
 ### Abs outcomes in 2020
 file_list <-
-  list.files(paste0(getwd(),'/Aggregated_CSV_Files/'),
+  list.files(paste0(getwd(),'/Outputs/Aggregated_CSV_Files/'),
              pattern = 'Abs',
              full.names = TRUE) %>%
   .[grepl('prevalence',.)] %>%
@@ -134,7 +134,7 @@ out_df_2050_check <-
 
 ###
 # Adding in species characteristics (rarity, etc)
-rarity <- read_csv('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/hab_pref_rarity_19Sep2023.csv')
+rarity <- read_csv(paste0(getwd(),'/Ag Intensity Outputs/Response to Habitat Intensification/hab_pref_rarity_19Sep2023.csv'))
 out_df_2050_check <-
   left_join(out_df_2050_check,
             rarity %>%
@@ -146,7 +146,7 @@ out_df_2050_check <-
 ###
 # Adding in species body mass
 body_mass <- 
-  read_csv('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/file_transfers_aug212024/Body Mass Estimates 20February2020 Updated Taxonomy.csv') %>%
+  read_csv(paste0(getwd(),'/Other Data Inputs/Pop Density Inputs/Body Mass Estimates 20February2020 Updated Taxonomy.csv')) %>%
   dplyr::select(taxon = Class,
                 binomial,
                 est_mass_kg) %>%
@@ -157,7 +157,7 @@ body_mass <-
                      grepl('MAMMALIA',taxon) ~ 'Mammals'))
 
 rep_mass <- 
-  read_csv('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/file_transfers_aug212024/reptile_body_masses.csv') %>%
+  read_csv(paste0(getwd(),'/Other Data Inputs/Pop Density Inputs/reptile_body_masses.csv')) %>%
   mutate(taxon = 'Reptiles') %>%
   mutate(binomial = gsub(' ','_',binomial)) %>%
   mutate(est_mass_kg = `mass (g)` / 1000) %>%
@@ -194,7 +194,7 @@ biomes <-
 ###
 # Getting data for extent of habitat fragmentation
 files <-
-  list.files(path = '/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Aggregated_CSV_Files_Migration/',
+  list.files(path = paste0(getwd(),'/Outputs/Aggregated_CSV_Files_Migration/'),
              pattern = 'Abs',
              full.names = TRUE) %>%
   .[grepl('prevalence',.)]
@@ -205,7 +205,7 @@ out_df <-
                 area_largest_pop = area_largest_patch, pop_largest_pop = pop_largest_patch)
 
 no_mig_files <-
-  list.files(path = '/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Aggregated_CSV_Files',
+  list.files(path = paste0(getwd(),'/Outputs/Aggregated_CSV_Files/'),
              pattern = 'Abs',
              full.names = TRUE) %>%
   .[grepl('prevalence',.)] %>%
@@ -270,10 +270,10 @@ dat_ratio <-
 ###
 # Adding dispersal distances to the data frame
 # Dispersal distance function
-amp_dispersal_distance_frame <- read.csv('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Amphibian Migration Distance 29Nov2019.csv')
-mam_dispersal_distance_frame <- read.csv('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/DispersalDistances_Estimated.csv')
+amp_dispersal_distance_frame <- read.csv(paste0(getwd(),'/Other Data Inputs/Amphibian Migration Distance 29Nov2019.csv'))
+mam_dispersal_distance_frame <- read.csv(paste0(getwd(),'/Other Data Inputs/DispersalDistances_Estimated.csv'))
 
-body_mass_frame <- read.csv('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/file_transfers_aug212024/Body Mass Estimates 20February2020 Updated Taxonomy.csv')
+body_mass_frame <- read.csv(paste0(getwd(),'/Other Data Inputs/Pop Density Inputs/Body Mass Estimates 20February2020 Updated Taxonomy.csv'))
 
 dispersal_distance_function <-
   function(ss) {
@@ -330,7 +330,7 @@ dispersal_distance_function <-
       # Based on taxonomies
       # And filling gaps, where needed
       dispersal_distance <-
-        read.csv('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/bird_dispersal_distances.csv', stringsAsFactors = FALSE) %>%
+        read.csv(paste0(getwd(),'/Other Data Inputs/bird_dispersal_distances.csv'), stringsAsFactors = FALSE) %>%
         mutate(Scientific_Name = gsub(' ','_', Scientific_Name)) %>%
         filter(paste0('Birds/',Scientific_Name) %in% species.frame$binomial[ss]) %>%
         dplyr::select(dispersal_distance) %>%
@@ -338,13 +338,13 @@ dispersal_distance_function <-
       
       if(is.na(dispersal_distance)) {
         dispersal_distance <- 
-          quantile(read.csv('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/bird_dispersal_distances.csv', stringsAsFactors = FALSE)$dispersal_distance,.9,na.rm=TRUE) 
+          quantile(read.csv(paste0(getwd(),'/Other Data Inputs/bird_dispersal_distances.csv'), stringsAsFactors = FALSE)$dispersal_distance,.9,na.rm=TRUE) 
       }
       
       if(max(dispersal_distance) < 0) {
         # using 90th percentile to fill gap if species not matched
         dispersal_distance <- 
-          quantile(read.csv('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/bird_dispersal_distances.csv', stringsAsFactors = FALSE)$dispersal_distance,.9,na.rm=TRUE) 
+          quantile(read.csv(paste0(getwd(),'/Other Data Inputs/bird_dispersal_distances.csv'), stringsAsFactors = FALSE)$dispersal_distance,.9,na.rm=TRUE) 
       }
     } else if (taxon %in% 'Reptiles') {
       
@@ -384,9 +384,9 @@ disperse_distance_frame <-
 species.frame <- disperse_distance_frame
 
 
-if(grepl('Dispersal_',list.files('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Dispersal_Distances/'))) {
+if(sum(grepl('Dispersal_',list.files(paste0(getwd(),'/Other Data Inputs/'))))>=1) {
   disperse_distance_frame <-
-    read.csv('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Dispersal_Distances/Dispersal_Distances_2025.04.28.csv',
+    read.csv(paste0(getwd(),'/Other Data Inputs/Dispersal_Distances_2025.04.28.csv'),
              stringsAsFactors = FALSE)
 } else {
   
@@ -398,7 +398,7 @@ if(grepl('Dispersal_',list.files('/Users/michael/Desktop/Research/Multiple_Stres
   ###
   # Saving csv
   write.csv(disperse_distance_frame,
-            '/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Dispersal_Distances/Dispersal_Distances_2025.04.28.csv',
+            paste0(getwd(),'/Other Data Inputs/Dispersal_Distances_2025.04.28.csv'),
             row.names = FALSE)
 }
 

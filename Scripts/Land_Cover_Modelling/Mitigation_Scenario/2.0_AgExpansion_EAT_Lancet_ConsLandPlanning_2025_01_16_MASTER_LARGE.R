@@ -29,7 +29,7 @@ rm(list=ls())
 # Load models, functions and data -----
 setwd("/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity")
 # setwd("/Users/maclark/Desktop/Multiple Stresses of Biodiversity")
-source("/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Scripts/Land Cover Modelling/SSP1_Land_Cover_Modelling/0.0_LandUseChangeFunctions_ConsLandPlanning_2025_01_14.R")
+source(paste0(getwd(),"/Scripts/Land Cover Modelling/SSP1_Land_Cover_Modelling/0.0_LandUseChangeFunctions_ConsLandPlanning_2025_01_14.R"))
 
 # Is conservation land use planning implemented?
 conservation_land_planning = 'yes'
@@ -400,7 +400,7 @@ for(k in sample(1:12,12)) { # Odd ordering is to complete the small regions firs
       
       ### merging in GDD binary information
       # file list
-      gdd_files <- list.files(paste0(getwd() %>% gsub('pubh-glob2loc','ouce-glob2loc',.),'/CMIP6_Climate_Data/SSP1-2.6/Interpolated_Rasters'), pattern = 'GDD_5C_binary', full.names = TRUE)
+      gdd_files <- list.files(paste0(getwd(),'/CMIP6_Climate_Data/SSP1-2.6/Interpolated_Rasters'), pattern = 'GDD_5C_binary', full.names = TRUE)
       
       # years
       years <- sort(str_extract(gdd_files,'binary_[0-9]{4,4}')) %>% gsub('binary_','',.)

@@ -8,11 +8,11 @@ library(viridis)
 library(terra)
 
 # loading rasters
-urb_2020 <- rast('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Urbanization_Forecasts/Urban Extent 2020.tif')
-urb_2050 <- rast('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Urbanization_Forecasts/Urban Extent 2050.tif')
+urb_2020 <- rast(paste0(getwd(),'/Urbanization_Forecasts/Urban Extent 2020.tif'))
+urb_2050 <- rast(paste0(getwd(),'/Urbanization_Forecasts/Urban Extent 2050.tif'))
 
 # Removing non land cells
-crop_2020 <- rast('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Land_Forecasting_Outputs/crop_mean2015_2020.tif')
+crop_2020 <- rast(paste0(getwd(),'/Land Forecast Outputs/BAU/Global tifs/crop_mean2015_2020.tif'))
 
 urb_2020[is.na(crop_2020)] <- NA
 urb_2050[is.na(crop_2020)] <- NA
@@ -23,7 +23,7 @@ urb_2050[is.na(urb_2050) & !is.na(crop_2020)] <- 0
 urb_delta <- urb_2050 - urb_2020
 
 # getting map of countries
-borders <- vect('/Users/michael/Downloads/TM_WORLD_BORDERS-0.3/TM_WORLD_BORDERS-0.3.shp')
+borders <- vect(paste0(getwd(),'/TM_WORLD_BORDERS-0.3/TM_WORLD_BORDERS-0.3.shp'))
 borders <- project(borders,crop_2020)
 
 # Colour palette
@@ -73,7 +73,7 @@ plot_function <-
 ###
 # plotting
 # dev.off()
-pdf(paste0('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Figures and Tables/Figures/FigS3_UrbExpansion_',Sys.Date(),'.pdf'),
+pdf(paste0(getwd(),'/Figures and Tables/Figures/FigS3_UrbExpansion_',Sys.Date(),'.pdf'),
     width = 12, height = 4)
 par(mfrow = c(1,3))
 

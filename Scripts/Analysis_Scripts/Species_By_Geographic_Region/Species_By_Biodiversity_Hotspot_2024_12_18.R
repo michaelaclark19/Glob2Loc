@@ -22,8 +22,7 @@ ecoregion_map[is.na(ecoregion_map) & !is.na(template_map)] <- -99
 
 # List of taxa in the analysis
 taxa_list <- 
-  list.files(paste0(getwd() %>%
-                      gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/SSP2-4.5'),
+  list.files(paste0(getwd(),'/ESH_RCPs/SSP2-4.5'),
              full.names = TRUE) %>%
   .[!grepl('Updated',.)] %>%
   .[!grepl('Climate',.)]

@@ -17,7 +17,7 @@ setwd("/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity")
 ###
 # Plotting raster map
 # This is the big plot
-winners_losers_rast <- rast('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Temp_Raster_Folders/ecoregions_winners_losers.tif')
+winners_losers_rast <- rast(paste0(getwd(),'/Files_For_Fig3/ecoregions_winners_losers.tif'))
 
 
 levels(winners_losers_rast) <- 
@@ -71,7 +71,7 @@ cols <-
 
 ###
 # Getting country borders
-country_borders <- vect('/Users/michael/Downloads/TM_WORLD_BORDERS-0.3/TM_WORLD_BORDERS-0.3.shp')
+country_borders <- vect(paste0(getwd(),'/TM_WORLD_BORDERS-0.3/TM_WORLD_BORDERS-0.3.shp'))
 country_borders <- project(country_borders, winners_losers_rast)
 
 pdf(paste0(getwd(),'/Figures and Tables/Figures/Fig3_a_winners_losers',Sys.Date(),'.pdf'),
@@ -145,7 +145,7 @@ dev.off()
 ###
 # Getting habitat loss
 file_list <-
-  list.files(paste0(getwd(),'/Aggregated_CSV_Files/'),
+  list.files(paste0(getwd(),'/Outputs/Aggregated_CSV_Files/'),
              pattern = 'Prop',
              full.names = TRUE) %>%
   .[grepl('prevalence',.)] %>%
@@ -196,7 +196,7 @@ out_df_heatmap <-
 ###
 # Now getting plotting for ecoregions by taxon
 file_list <-
-  list.files(paste0(getwd(),'/Aggregated_CSV_Files/'),
+  list.files(paste0(getwd(),'/Outputs/Aggregated_CSV_Files/'),
              pattern = 'Prop',
              full.names = TRUE) %>%
   .[grepl('prevalence',.)] %>%
@@ -242,7 +242,7 @@ out_df_heatmap <-
 # Adding ecoregions
 out_df_ecoregion <- 
   left_join(out_df_heatmap,
-            read_csv('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/species_by_ecoregion_esh_maps.csv') %>%
+            read_csv(paste0(getwd(),'/Ecoregions_Feb2023/species_by_ecoregion_esh_maps.csv')) %>%
               mutate(species = gsub('_[A-Z].*|_[0-9].*','',species)) %>%
               mutate(binomial = paste0(taxa,'/',species)) %>%
               distinct()) %>%

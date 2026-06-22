@@ -19,7 +19,7 @@ dir.create(paste0(getwd(),'/Analyses/SDM_Analyses/Species_Results'),recursive=TR
 
 # List of taxa
 taxa.list <-
-  list.files(paste0(getwd()  %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/','SSP2-4.5')) %>%
+  list.files(paste0(getwd(),'/ESH_RCPs/','SSP2-4.5')) %>%
   .[!grepl('.tif',.)] %>%
   .[!grepl('_',.)]
 
@@ -29,7 +29,7 @@ years.list <-
 
 # List of threshold types
 thresh.list <-
-  list.files(paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/','SSP2-4.5','/','Amphibians'), pattern = 'migrate') %>%
+  list.files(paste0(getwd(),'/ESH_RCPs/','SSP2-4.5','/','Amphibians'), pattern = 'migrate') %>%
   gsub('_migrate.*','',.) %>%
   gsub('.*[0-9]{4,4}_','',.) %>%
   unique()
@@ -39,7 +39,7 @@ sdm.species <-
   do.call(c,
           lapply(taxa.list,
                  function(i) {
-                   list.files(paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/SSP5-8.5/',i),
+                   list.files(paste0(getwd(),'/ESH_RCPs/SSP5-8.5/',i),
                               pattern = 'csv') %>%
                      .[grepl('migrate',.)] %>%
                      paste0(i,'/',.) %>%
@@ -86,7 +86,7 @@ sdm_map_files_all <-
   do.call(c,
           lapply(taxa.list,
                  FUN = function(ii) {
-                   list.files(paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/','SSP2-4.5','/',ii),
+                   list.files(paste0(getwd(),'/ESH_RCPs/','SSP2-4.5','/',ii),
                               full.names = TRUE)
                  }))
 

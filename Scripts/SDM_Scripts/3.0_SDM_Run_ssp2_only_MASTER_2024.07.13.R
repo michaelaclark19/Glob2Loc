@@ -69,7 +69,7 @@ registerDoMC(cores=35)
 # Creating climate maps for SDM files -----
 # Only need to do this once
 # So making an if exception so that this loop only runs the first time the script is run
-if('GDD_5C_Mollweide_squared.tif' %in% list.files(paste0(getwd(),'/CMIP6_Climate_Data/SSP5-8.5/2081-2100/Managed_Rasters'))) { # Checking to see if a managed climate raster exists - if it does, do not need to do the loop
+if('GDD_5C_Mollweide_squared.tif' %in% list.files(paste0(getwd(),'/CMIP6_Climate_Data/SSP2-4.5/2041-2060/Managed_Rasters'))) { # Checking to see if a managed climate raster exists - if it does, do not need to do the loop
   # Do nothing
 } else {
   # Make the climate maps
@@ -240,7 +240,10 @@ cell_count <- function(x){
 if('Cell_Count' %in% list.files(paste0(getwd(),'/Other Data Inputs'))) {
   esh.tot <-
     read.csv(paste0(getwd(),'/Other Data Inputs/Cell_Count/Number_of_cells_by_species.csv'))  %>%
-    filter(!(species_name %in% already.have))	       
+    filter(!(species_name %in% already.have)) %>%
+    # Updating directory of ESH Tifs for the demo dataset
+    mutate(ESH_tif = gsub('.*Multiple_Stresses_of_Biodiversity/','',ESH_tif)) %>%
+    mutate(ESH_tif = paste0(getwd(),'/',ESH_tif))
   
 } else {
   # Counting number of cells and saving file
@@ -276,8 +279,8 @@ dir.create(paste0(getwd(),'/TMP_SDM_FILE_1'))
 dir.create(paste0(getwd(),'/TMP_SDM_FILE_1_MOSAIC'))
 
 # Saving path names so I don't need to copy and paste a bunch later
-path.sdms.write.tmp <- paste0(getwd(),'/TMP_SDM_FILE_1') %>% gsub('ouce-glob2loc','pubh-glob2loc',.)
-path.sdms.write.mosaiced.tmp <- paste0(getwd(),'/TMP_SDM_FILE_1_MOSAIC') %>% gsub('ouce-glob2loc','pubh-glob2loc',.)
+path.sdms.write.tmp <- paste0(getwd(),'/TMP_SDM_FILE_1')
+path.sdms.write.mosaiced.tmp <- paste0(getwd(),'/TMP_SDM_FILE_1_MOSAIC')
 
 # List of ssps
 ssp.list <- list.files(paste0(getwd(),'/CMIP6_Climate_Data'))
@@ -910,8 +913,7 @@ sdm_wrap <- function(k) {
                                      df$species_name[k],
                                      "_",
                                      names(raw.preds.stack)[ii],
-                                     '.tif') %>%
-                                gsub('ouce-glob2loc','pubh-glob2loc',.),
+                                     '.tif'),
                               overwrite = TRUE)
                 }
                 
@@ -1026,7 +1028,34 @@ df <-
 	# filter(!grepl('Phyllastrephus_albigula',species_name))
 
 
-sdm_wrap(26)
+###
+# Species in demo dataset
+demo_species <-
+  c(list.files('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Files_For_Katia/ESH_Tifs_12Oct/Amphibians',full.names=TRUE),
+    list.files('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Files_For_Katia/ESH_Tifs_12Oct/Birds',full.names=TRUE),
+    list.files('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Files_For_Katia/ESH_Tifs_12Oct/Mammals',full.names=TRUE),
+    list.files('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Files_For_Katia/ESH_Tifs_12Oct/Reptiles',full.names=TRUE)) %>%
+  gsub('.*ESH_Tifs_12Oct/','',.) %>%
+  gsub('.tif','',.) %>%
+  gsub('_[A-Z].*','',.)
+  
+
+
+###
+# Filtering for demo dataset
+df <-
+  df %>%
+  filter(paste0(taxa,'/',species_name) %in%
+           demo_species)
+
+
+###
+# For running in parallel
+mclapply(1:nrow(df),sdm_wrap, mc.cores=5)
+
+### 
+# For running not in parallel
+for(ii in 1:nrow(df)) {sdm_wrap(ii)}
 
 # table(df$taxa)
 # 

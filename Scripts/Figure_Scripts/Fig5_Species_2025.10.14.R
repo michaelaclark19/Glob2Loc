@@ -16,6 +16,7 @@
   library(dplyr)
   library(viridis)
   library(viridisLite)
+  library(rnaturalearth)
   
   ###
   # Background data management
@@ -30,15 +31,15 @@
                          '#aa00aa'))(round(99*3.5/7))))
   
   # Importing files
-  clim_suit <- rast('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Phylloscartes_oustaleti_SSP2_prevalence_threshold__2050.tif')
-  baseline_2020 <- rast('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/TempFigs_14Nov2024/hab_availability_Phylloscartes_oustaleti_prevalence_2020_esh.future.extent.esh.exp.int.urb.tif')
-  all_2050 <- rast('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/TempFigs_14Nov2024/hab_availability_Phylloscartes_oustaleti_prevalence_2050_esh.future.extent.esh.exp.int.urb.tif')
-  abund_2050 <- rast('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/TempFigs_14Nov2024/pop_density_Phylloscartes_oustaleti_prevalence_2050_esh.future.extent.esh.exp.int.urb.tif')
-  ag_2050 <- rast('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/TempFigs_14Nov2024/hab_availability_Phylloscartes_oustaleti_prevalence_2050_esh.future.extent.esh.exp.tif')
-  urb_2050 <- rast('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/TempFigs_14Nov2024/hab_availability_Phylloscartes_oustaleti_prevalence_2050_esh.future.extent.esh.urb.tif')
-  clim_2050 <- rast('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/TempFigs_14Nov2024/hab_availability_Phylloscartes_oustaleti_prevalence_2050_esh.current.extent.esh.tif')
-  patches_2050 <- rast('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/TempFigs_14Nov2024/patches_2050_Phylloscartes_oustaleti.tif')
-  pops_2050 <- rast('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/TempFigs_14Nov2024/pops_2050_Phylloscartes_oustaleti.tif')
+  clim_suit <- rast(paste0(getwd(),'/Files_For_Fig5/Phylloscartes_oustaleti_SSP2_prevalence_threshold__2050.tif'))
+  baseline_2020 <- rast(paste0(getwd(),'/Files_For_Fig5/hab_availability_Phylloscartes_oustaleti_prevalence_2020_esh.future.extent.esh.exp.int.urb.tif'))
+  all_2050 <- rast(paste0(getwd(),'/Files_For_Fig5/hab_availability_Phylloscartes_oustaleti_prevalence_2050_esh.future.extent.esh.exp.int.urb.tif'))
+  abund_2050 <- rast(paste0(getwd(),'/Files_For_Fig5/pop_density_Phylloscartes_oustaleti_prevalence_2050_esh.future.extent.esh.exp.int.urb.tif'))
+  ag_2050 <- rast(paste0(getwd(),'/Files_For_Fig5/hab_availability_Phylloscartes_oustaleti_prevalence_2050_esh.future.extent.esh.exp.tif'))
+  urb_2050 <- rast(paste0(getwd(),'/Files_For_Fig5/hab_availability_Phylloscartes_oustaleti_prevalence_2050_esh.future.extent.esh.urb.tif'))
+  clim_2050 <- rast(paste0(getwd(),'/Files_For_Fig5/hab_availability_Phylloscartes_oustaleti_prevalence_2050_esh.current.extent.esh.tif'))
+  patches_2050 <- rast(paste0(getwd(),'/Files_For_Fig5/patches_2050_Phylloscartes_oustaleti.tif'))
+  pops_2050 <- rast(paste0(getwd(),'/Files_For_Fig5/pops_2050_Phylloscartes_oustaleti.tif'))
   
   # Getting states of brazil
   brazil_states <- ne_states(country = 'Brazil', returnclass = 'sv')
@@ -51,14 +52,14 @@
       min(ext(baseline_2020)[3],ext(all_2050)[3]),
       max(ext(baseline_2020)[4],ext(all_2050)[4])))
   
-  baseline_2020 <- extend(baseline_2020, max_extent)
-  all_2050 <- extend(all_2050,max_extent)
-  ag_2050 <- extend(ag_2050,max_extent)
-  urb_2050 <- extend(urb_2050,max_extent)
-  clim_2050 <- extend(clim_2050,max_extent)
-  patches_2050 <- extend(patches_2050,max_extent)
-  pops_2050 <- extend(pops_2050, max_extent)
-  mollweide_id_full <- rast('/Users/michael/Desktop/MollweideCountryID_1.5km.tif')
+  baseline_2020 <- terra::extend(baseline_2020, max_extent)
+  all_2050 <- terra::extend(all_2050,max_extent)
+  ag_2050 <- terra::extend(ag_2050,max_extent)
+  urb_2050 <- terra::extend(urb_2050,max_extent)
+  clim_2050 <- terra::extend(clim_2050,max_extent)
+  patches_2050 <- terra::extend(patches_2050,max_extent)
+  pops_2050 <- terra::extend(pops_2050, max_extent)
+  mollweide_id_full <- rast(paste0(getwd(),'/Global Mollweide Maps/MollweideCountryID_1.5km.tif'))
   
   # Updating clim suit map to remove oceans, etc
   mollweide_id <- crop(mollweide_id_full, clim_suit)
@@ -84,12 +85,12 @@
   pops_sf_1 <- as(pops_2050_poly[pops_2050_poly$pops_2050_Phylloscartes_oustaleti %in% 1], 'Spatial')
   pops_sf_2 <- as(pops_2050_poly[pops_2050_poly$pops_2050_Phylloscartes_oustaleti %in% 2], 'Spatial')
   clim_sp <- crop(clim_vect, 
-                  round(all_2050,digits = 2) %>% extend(.,450))
+                  round(all_2050,digits = 2) %>% terra::extend(.,450))
   clim_sp <- as(clim_sp,'Spatial')
   
   # brazil_states_rast <- rasterize(brazil_states, mollweide_id_full)
   # dev.off()
-  pdf('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Figures and Tables/Figures/Fig5a_Species_HabAvail_2025-05-17.pdf',
+  pdf(paste0(getwd(),'/Figures and Tables/Figures/Fig5a_Species_HabAvail_2025-05-17.pdf'),
       width = 9 / 2.54,
       height = 9 / 2.54)
   par(mar = c(3,1,1,1))
@@ -122,7 +123,7 @@
        # density = 15,
        # angle = 45)
   
-  plot(round(all_2050,digits = 2) %>% extend(.,150),
+  plot(round(all_2050,digits = 2) %>% terra::extend(.,150),
        box = FALSE,
        legend = FALSE,
        axes = FALSE,
@@ -232,7 +233,7 @@
   # Adding distance scale
   tmp_df <- 
     round(all_2050,digits = 2) %>% 
-    extend(.,150) %>%
+    terra::extend(.,150) %>%
     as.data.frame(xy = TRUE) %>%
     dplyr::select(x,y) %>% 
     distinct()
@@ -350,7 +351,7 @@ rc_matrix[num_breaks, 2] <- rc_matrix[num_breaks, 2] + 1e-10  # tiny increment t
 quintile_raster <- classify(abund_2050, rc_matrix, include.lowest = TRUE)
 # plot(quintile_raster) # Checking
 
-pdf('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Figures and Tables/Figures/Fig5b_Species_PopAbund_2025-05-17.pdf',
+pdf(paste0(getwd(),'/Figures and Tables/Figures/Fig5b_Species_PopAbund_2025-05-17.pdf'),
     width = 9 / 2.54,
     height = 9 / 2.54)
 par(mar = c(3,1,1,1))
@@ -447,7 +448,7 @@ text(x = grconvertX(.7, from = 'ndc', to = 'user'),
 # Adding distance scale
 tmp_df <- 
   round(all_2050,digits = 2) %>% 
-  extend(.,150) %>%
+  terra::extend(.,150) %>%
   as.data.frame(xy = TRUE) %>%
   dplyr::select(x,y) %>% 
   distinct()
@@ -533,7 +534,7 @@ dev.off()
 
 
 
-pdf('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Figures and Tables/Figures/Fig5c_Species_Clim_2025-05-17.pdf',
+pdf(paste0(getwd(),'/Figures and Tables/Figures/Fig5c_Species_Clim_2025-05-17.pdf'),
     width = 9 / 2.54 * 2/3,
     height = 9 / 2.54 * 2/3)
 par(mar = c(2,1,1,1))
@@ -708,7 +709,7 @@ dev.off()
 
 ###
 # Panel d
-pdf('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Figures and Tables/Figures/Fig5d_Species_AgExp_2025-05-17.pdf',
+pdf(paste0(getwd(),'/Figures and Tables/Figures/Fig5d_Species_AgExp_2025-05-17.pdf'),
     width = 9 / 2.54 * 2/3,
     height = 9 / 2.54 * 2/3)
 par(mar = c(2,1,1,1))
@@ -883,7 +884,7 @@ dev.off()
 ###
 # Panel e
 
-pdf('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Figures and Tables/Figures/Fig5e_Species_Urb_2025-05-17.pdf',
+pdf(paste0(getwd(),'/Figures and Tables/Figures/Fig5e_Species_Urb_2025-05-17.pdf'),
     width = 9 / 2.54 * 2/3,
     height = 9 / 2.54 * 2/3)
 par(mar = c(2,1,1,1))

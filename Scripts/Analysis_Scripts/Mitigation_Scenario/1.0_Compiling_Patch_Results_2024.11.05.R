@@ -16,8 +16,9 @@ library(stringr)
 
 ###
 # setting working directory
-files_stored_wd <- '/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity'
-files_write_wd <- '/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity'
+setwd('...')
+files_stored_wd <- getwd()
+files_write_wd <- getwd()
 # setwd('/Users/michael/Desktop/Research/Glob2Loc/tmp_cheetah_files')
 
 ###
@@ -47,11 +48,11 @@ scen_list <-
 #   .[!grepl('nomigration',.)]
 
 # creating directories for file storage
-dir.create('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Outputs')
-dir.create('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Outputs/CSV_File_Outputs')
-dir.create('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Outputs/Managed_CSV_Files_EAT_Lancet')
-dir.create('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Outputs/Managed_CSV_Files_EAT_Lancet/Abs_Impacts/')
-dir.create('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Outputs/Managed_CSV_Files_EAT_Lancet/Prop_Impacts/')
+dir.create(paste0(getwd(),'Outputs'))
+dir.create(paste0(getwd(),'Outputs/CSV_File_Outputs'))
+dir.create(paste0(getwd(),'/Outputs/Managed_CSV_Files_EAT_Lancet'))
+dir.create(paste0(getwd(),'Outputs/Managed_CSV_Files_EAT_Lancet/Abs_Impacts/'))
+dir.create(paste0(getwd(),'/Outputs/Managed_CSV_Files_EAT_Lancet/Prop_Impacts/'))
 lapply(taxa_list, function(tt) {dir.create(paste0(files_write_wd,'/Outputs/Managed_CSV_Files_EAT_Lancet/Prop_Impacts/',tt))})
 lapply(taxa_list, function(tt) {dir.create(paste0(files_write_wd,'/Outputs/Managed_CSV_Files_EAT_Lancet/Abs_Impacts/',tt))})
 

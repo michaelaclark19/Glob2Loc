@@ -107,7 +107,7 @@ years.loop <-
 
 # List of SSPs
 ssps <-
-  list.files('/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/ESH_RCPs', pattern = 'SSP2')
+  list.files(paste0(getwd(),'/ESH_RCPs'), pattern = 'SSP2')
 
 # List of threshold types
 thresholds <- c('prevalence','specsens')
@@ -160,7 +160,7 @@ for(i in species.need.list[[chunk_n]]) { # For testing; chunk_n is a variable th
     
     # Getting esh
     clipped.esh <-
-      raster(list.files(paste0(getwd() %>% gsub('pubh-glob2loc','ouce-glob2loc',.),'/ESH_Tifs_12Oct/',taxa,'/'), pattern = tmp.name, full.names = TRUE))
+      raster(list.files(paste0(getwd(),'/ESH_Tifs_12Oct/',taxa,'/'), pattern = tmp.name, full.names = TRUE))
     
     # Getting overlap with ecoregion map
     species.ecoregion <- raster::crop(biome_realm, clipped.esh)

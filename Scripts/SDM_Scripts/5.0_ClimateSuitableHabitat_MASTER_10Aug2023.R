@@ -103,10 +103,8 @@ tnc.eco <- raster(paste0(getwd(),'/Ecoregions_Feb2023/biomes_realms_raster.tif')
 
 # Have multiple working directories because of memory issues
 # Needed to get creative!
-wd.list <-
-  c('/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity',
-    '/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity')
-
+wd.list <- getwd()
+  
 # List of species we have
 species.list <-
   list.dirs(paste0(getwd(),'/ESH_RCPs/Weighted_Threshold_Accuracy')) %>% 
@@ -151,10 +149,10 @@ aoh.list <-
 ###
 # Removing species we already have...
 species.have <-
-  c(list.files(paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/SSP5-8.5/Amphibians'), full.names = TRUE),
-    list.files(paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/SSP5-8.5/Birds'), full.names = TRUE),
-    list.files(paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/SSP5-8.5/Mammals'), full.names = TRUE),
-    list.files(paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/SSP5-8.5/Reptiles'), full.names = TRUE)) %>%
+  c(list.files(paste0(getwd(),'/ESH_RCPs/SSP5-8.5/Amphibians'), full.names = TRUE),
+    list.files(paste0(getwd(),'/ESH_RCPs/SSP5-8.5/Birds'), full.names = TRUE),
+    list.files(paste0(getwd(),'/ESH_RCPs/SSP5-8.5/Mammals'), full.names = TRUE),
+    list.files(paste0(getwd(),'/ESH_RCPs/SSP5-8.5/Reptiles'), full.names = TRUE)) %>%
   .[grepl('.csv',.)] %>% gsub('_completed.*','',.) %>% gsub('.*SSP5-8.5/','',.)
 
 # Overlap between species list and species already have
@@ -257,8 +255,8 @@ species_wrap_fun <-
           
           
           
-          if(sum(grepl('pubh-glob2loc',model.files)) > 0 & sum(grepl('ouce-glob2loc',model.files)) > 0) { # Checking if there are files in both the ouce and pubh directories. If so, take the ouce files
-            model.files <- model.files[grepl('ouce-glob2loc',model.files)]
+          if(sum(grepl(getwd(),model.files)) > 0 & sum(grepl(getwd(),model.files)) > 0) { # Checking if there are files in both the ouce and pubh directories. If so, take the ouce files
+            model.files <- model.files[grepl(getwd(),model.files)]
           } # End if statement
           
           # Stacking if needed
@@ -397,7 +395,7 @@ species_wrap_fun <-
               # Do nothing
               # Write raster to save space
               writeRaster(out.raster.prev, 
-                          paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/',ssps.write[grep(ss,ssps.write)],'/',tmp.taxa,'/',tmp.name,'_',ss,'_','prevalence_threshold__',years.interp[y],'.tif'),
+                          paste0(getwd(),'/ESH_RCPs/',ssps.write[grep(ss,ssps.write)],'/',tmp.taxa,'/',tmp.name,'_',ss,'_','prevalence_threshold__',years.interp[y],'.tif'),
                           # paste0('/data/pubh-glob2loc/pubh0329/trial_transfer_21Sept2022/',tmp.name,'_',ss,'_','prevalence_threshold'),
                           # suffix = gsub('X','',names(out.save.stack.prev)),
                           format = 'GTiff',
@@ -405,7 +403,7 @@ species_wrap_fun <-
                           overwrite = TRUE)
               
               writeRaster(out.raster.specsens, 
-                          paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/',ssps.write[grep(ss,ssps.write)],'/',tmp.taxa,'/',tmp.name,'_',ss,'_','specsens_threshold__',years.interp[y],'.tif'),
+                          paste0(getwd(),'/ESH_RCPs/',ssps.write[grep(ss,ssps.write)],'/',tmp.taxa,'/',tmp.name,'_',ss,'_','specsens_threshold__',years.interp[y],'.tif'),
                           # paste0('/data/pubh-glob2loc/pubh0329/trial_transfer_21Sept2022/',tmp.name,'_',ss,'_','prevalence_threshold'),
                           # suffix = gsub('X','',names(out.save.stack.prev)),
                           format = 'GTiff',
@@ -416,7 +414,7 @@ species_wrap_fun <-
               # out.save.stack.prev <- raster::stack(out.save.stack.prev, out.raster.prev)
               # out.save.stack.specsens <- raster::stack(out.save.stack.specsens, out.raster.specsens)
               writeRaster(out.raster.prev, 
-                          paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/',ssps.write[grep(ss,ssps.write)],'/',tmp.taxa,'/',tmp.name,'_',ss,'_','prevalence_threshold__',years.interp[y],'.tif'),
+                          paste0(getwd(),'/ESH_RCPs/',ssps.write[grep(ss,ssps.write)],'/',tmp.taxa,'/',tmp.name,'_',ss,'_','prevalence_threshold__',years.interp[y],'.tif'),
                           # paste0('/data/pubh-glob2loc/pubh0329/trial_transfer_21Sept2022/',tmp.name,'_',ss,'_','prevalence_threshold'),
                           # suffix = gsub('X','',names(out.save.stack.prev)),
                           format = 'GTiff',
@@ -424,7 +422,7 @@ species_wrap_fun <-
                           overwrite = TRUE)
               
               writeRaster(out.raster.specsens, 
-                          paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/',ssps.write[grep(ss,ssps.write)],'/',tmp.taxa,'/',tmp.name,'_',ss,'_','specsens_threshold__',years.interp[y],'.tif'),
+                          paste0(getwd(),'/ESH_RCPs/',ssps.write[grep(ss,ssps.write)],'/',tmp.taxa,'/',tmp.name,'_',ss,'_','specsens_threshold__',years.interp[y],'.tif'),
                           # paste0('/data/pubh-glob2loc/pubh0329/trial_transfer_21Sept2022/',tmp.name,'_',ss,'_','prevalence_threshold'),
                           # suffix = gsub('X','',names(out.save.stack.prev)),
                           format = 'GTiff',
@@ -466,7 +464,7 @@ species_wrap_fun <-
     
     # And pinging a csv file to save progress - using these to check progress ensures rasters have been properly saved...
     write.csv(data.frame(complete = 'complete'),
-              paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/SSP5-8.5/',tmp.taxa,'/',tmp.name,'_completed.csv'))  
+              paste0(getwd(),'/ESH_RCPs/SSP5-8.5/',tmp.taxa,'/',tmp.name,'_completed.csv'))  
     
     
     # Updating based on threshold
@@ -514,7 +512,7 @@ try_catch_function <-
                # tracking species it did not work for
                
                write.csv(data.frame(complete = 'complete'),
-                         paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/SSP5-8.5/',tmp_species, '_error_completed.csv'))
+                         paste0(getwd(),'/ESH_RCPs/SSP5-8.5/',tmp_species, '_error_completed.csv'))
              }) # End try catch 
   }
 

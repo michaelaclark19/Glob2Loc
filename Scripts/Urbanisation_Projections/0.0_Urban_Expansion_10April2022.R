@@ -26,9 +26,12 @@ urban.project.function <-
     # 2050 Raster from huang et al 2019
     urban.2010 <- raster(paste0(getwd(),'/ESA LandCov Maps/Urban2010_Corrected_GlobCov.tif'))
     urban.2050 <- raster(raster.file)
+    # urban.2050 <- rast(raster.file)
     # 2015 raster from globmod GHS_SMOD
-    urban.2015.globmod <- readOGR(paste0(getwd(),"/Global Mollweide Maps/CurrentUrbanGlobMod/GHS_SMOD_POP2015_GLOBE_R2019A_54009_1K_labelHDC_V2_0.gpkg"))
-    urban.2015.raster <- rasterize(urban.2015.globmod, urban.2050, 'BU_2015')
+    # urban.2015.globmod <- readOGR(paste0(getwd(),"/Global Mollweide Maps/CurrentUrbanGlobMod/GHS_SMOD_POP2015_GLOBE_R2019A_54009_1K_labelHDC_V2_0.gpkg"))
+    urban.2015.globmod <- vect(paste0(getwd(),"/Global Mollweide Maps/CurrentUrbanGlobMod/GHS_SMOD_POP2015_GLOBE_R2019A_54009_1K_labelHDC_V2_0.gpkg"))
+    # urban.2015.raster <- rasterize(urban.2015.globmod, urban.2050, 'BU_2015')
+    urban.2015.raster <- terra::rasterize(urban.2015.globmod, urban.2050, 'BU_2015')
     # Projecting all to 5x5km mollweide for consistency
     urban.2010.tmp <-
       projectRaster(urban.2010, urban.2050, method = 'bilinear')
@@ -48,6 +51,7 @@ urban.project.function <-
     # THese are decently close
     # BUt definite differences between the ssp map is binary, whereas the esa map is continuous
     urban.delta.ssp.esa <- urban.2015.raster - urban.2010.tmp
+    # urban.delta.ssp.esa <- raster(urban.2015.raster) - urban.2010.tmp
     plot(urban.delta.ssp.esa)
     
     # (3) Getting cells where urban extent expands ----

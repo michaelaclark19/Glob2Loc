@@ -22,7 +22,9 @@ n_cores = 20
 
 # List of directories - only need mean temp and total precip
 tmp <- list.dirs(paste0(getwd(),
-		 '/CMIP6_Climate_Data')) %>% .[grepl('[0-9]{4,4}$',.)]
+		 '/CMIP6_Climate_Data')) %>% 
+  .[grepl('[0-9]{4,4}$',.)] %>%
+  .[grepl('Historic.*1995|SSP.*2021|SSP.*2041',.)]
 
 # Making function to loop through
 temp.fun <-
@@ -31,7 +33,7 @@ temp.fun <-
 	month.order <- c('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec')
 
 	# List of rasters to import
-	raster.files <- list.files(paste0(i,'/Mean_temp'),full.names=TRUE) %>% .[grepl('Mollweide',.)] %>% .[!grepl('.aux',.)] %>% .[!grepl('.tiff',.)]
+	raster.files <- list.files(paste0(i,'/Mean_temp'),full.names=TRUE) %>% .[!grepl('Mollweide',.)] %>% .[!grepl('.aux',.)] #%>% .[!grepl('.tiff',.)]
 
 	# Making empty stack to append the raster for each month
 	raster.stack <- raster::stack()
@@ -47,7 +49,7 @@ temp.fun <-
     month.length <- c(31,28.25,31,30,31,30,31,31,30,31,30,31)
 
     # Multiplying
-    raster.df[,month.order] <- raster.df[,month.order] * month.long
+    raster.df[,month.order] <- raster.df[,month.order] * month.length
 
     # Row summing
     temp_sum <- rowSums(raster.df[,month.order])
@@ -60,7 +62,7 @@ temp.fun <-
 
     # And saving raster
     writeRaster(temp_avg_raster,
-		paste0(i,'/Managed_Rasters/Mean_annual_temp_mollweide.tif'),
+		paste0(i,'/Managed_Rasters/Mean_annual_temp.tif'),
 		overwrite = TRUE)
 	}
 

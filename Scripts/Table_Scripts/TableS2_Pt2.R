@@ -1,12 +1,15 @@
 #!/usr/bin/env Rscript
 
-
+# Libraries
 library(plyr)
 library(dplyr)
 library(parallel)
 library(data.table)
 
-file_list <- list.files('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Analyses/SDM_Analyses/Species_Results',full.names=TRUE)
+# Setting wd
+setwd('...')
+
+file_list <- list.files(paste0(getwd(),'/Analyses/SDM_Analyses/Species_Results'),full.names=TRUE)
 cat(length(file_list),'\n')
 
 tmp <- rbindlist(mclapply(file_list, fread,mc.cores=9), use.names = TRUE, fill = TRUE)
@@ -68,5 +71,5 @@ tmp_summary
 
 
 write.csv(tmp_summary,
-          '/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Analyses/SDM_Analyses/Species_Results_Aggregated_2026.04.16.csv',
+          paste0(getwd(),'/Analyses/SDM_Analyses/Species_Results_Aggregated_2026.04.16.csv'),
           row.names = FALSE)

@@ -19,7 +19,7 @@ setwd('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity')
 ###
 # Getting habitat loss
 file_list <-
-  list.files(paste0(getwd(),'/Aggregated_CSV_Files/'),
+  list.files(paste0(getwd(),'/Outputs/Aggregated_CSV_Files/'),
              pattern = 'Prop',
              full.names = TRUE) %>%
   .[grepl('prevalence',.)] %>%
@@ -40,15 +40,15 @@ out_df_unique <-
 
 # Species by ecoregion list
 prop_biodiv_hotspot <-
-  read_csv('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/species_by_ecoregion_esh_maps.csv')
+  read_csv(paste0(getwd(),'/Ecoregions_Feb2023/species_by_ecoregion_esh_maps.csv'))
 
 ###
 # Data management for function
 hotspots_raster <- 
-  raster('/Users/michael/Desktop/TNC_Ecoregions_Map.tif')
+  raster(paste0(getwd(),'/Ecoregions_Feb2023/TNC_Ecoregions_Map.tif'))
 
 biome_id_map <-
-  raster('/Users/michael/Desktop/Research/Glob2Loc/Data/Ecoregions/biome_id__mollweide.tif')
+  raster(paste0(getwd(),'/Ecoregions_Feb2023/biome_id__mollweide.tif'))
 
 # Making data table
 hotspots_df <- 
@@ -95,7 +95,7 @@ map_function <-
     
     # And returning
     writeRaster(tmp_raster,
-                paste0('/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Temp_Raster_Folders/',ii,'.tif'),
+                paste0(getwd(),'/Files_For_Fig3/',ii,'.tif'),
                 overwrite = TRUE)
     rm(tmp_raster)
   }
@@ -148,7 +148,7 @@ out_df_2050 <-
 
 for(ii in unique(out_df_2050$scenario)) { map_function(ii)}
 
-out_raster_list <- lapply(list.files(path = '/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Temp_Raster_Folders/', full.names = TRUE) %>% .[!grepl('lower',.)],rast)
+out_raster_list <- lapply(list.files(path = paste0(getwd(),'/Files_For_Fig3/'), full.names = TRUE) %>% .[!grepl('lower',.)],rast)
 
 plot_order <-
   c('Amphibians','Birds','Mammals','Reptiles',
@@ -170,7 +170,7 @@ title_order <-
 
 ###
 # Getting country borders
-borders <- vect('/Users/michael/Downloads/TM_WORLD_BORDERS-0.3/TM_WORLD_BORDERS-0.3.shp')
+borders <- vect(paste0(getwd(),'/TM_WORLD_BORDERS-0.3/TM_WORLD_BORDERS-0.3.shp'))
 borders <- project(borders,rast(out_raster_list[1]))
 
 # matrix_layout <-
@@ -239,7 +239,7 @@ for(xx in c(1:9)) {
         height = 2.3333)
     par(mar = c(0,0,0,0))
   }
-  tmp <- list.files(path = '/Users/michael/Desktop/Research/Multiple_Stresses_of_Biodiversity/Temp_Raster_Folders/',
+  tmp <- list.files(path = paste0(getwd(),'/Files_For_Fig2/'),
                     pattern = plot_order[xx],
                     full.names = TRUE) %>%
     .[!grepl('_lower',.)] %>%

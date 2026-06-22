@@ -13,6 +13,7 @@ library(raster)
 library(parallel)
 library(envirem)
 library(matrixStats)
+library(terra)
 
 # Setting working directory
 setwd('/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity')
@@ -22,8 +23,10 @@ setwd('/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity')
 n_cores = 10
 
 # List of directories - only need mean temp and total precip
-tmp <- list.dirs(paste0(getwd(),"/CMIP6_Climate_Data")) %>% .[grepl('[0-9]{4,4}$',.)]
-tmp <- tmp %>% .[!(grepl('Historic.*20[0-9]{2,2}-2',.))] %>% .[!grepl('SSP.*19',.)]
+tmp <- list.dirs(paste0(getwd(),"/CMIP6_Climate_Data")) %>% 
+  .[grepl('[0-9]{4,4}$',.)] %>%
+  .[grepl('[0-9]{4,4}$',.)] %>%
+  .[grepl('Historic.*1995|SSP.*2021|SSP.*2041',.)]
 
 # Function to stack rasters
 raster.stack.fun <-
@@ -73,8 +76,14 @@ mclapply.function <-
     # temp.info <- raster.stack.fun(list.files(paste0(i,'/Mean_temp'), full.names = TRUE))
     
     # Getting GDD
-    gdd_5c = growingDegDays(temp.info[['Rasters']],5,tempScale=1) # tempScale indicates in degrees C
-    gdd_10c = growingDegDays(temp.info[['Rasters']],10,tempScale=1) # tempScale indicates in degrees C
+    ### Old version of growingDegDays used raster package, new uses terra package. Have updated code below to convert raster stacks to equivalent terra object
+    
+    # Original code here for clarity
+    #gdd_5c = growingDegDays(temp.info[['Rasters']],5,tempScale=1) # tempScale indicates in degrees C
+    
+    
+    gdd_5c = growingDegDays(rast(temp.info[['Rasters']]),5,tempScale=1) # tempScale indicates in degrees C
+    gdd_10c = growingDegDays(rast(temp.info[['Rasters']]),10,tempScale=1) # tempScale indicates in degrees C
     
     # And saving
     writeRaster(gdd_5c,paste0(i,'/Managed_Rasters/GDD_5C.tif'),overwrite = TRUE)

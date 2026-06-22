@@ -47,7 +47,7 @@ cutoff <- .025
 setwd("/Users/maclark/Desktop/Multiple Stresses of Biodiversity")
 
 # Loading multinomial estimate function
-source(paste0(getwd(),'/Scripts/Land Cover Modelling/1.0 Multinomial Estimate Function.R'))
+source(paste0(getwd(),'/Scripts/Land Cover Modelling/0.0 Multinomial Estimate Function.R'))
 
 # getting list of GBM file names
 file.list <-

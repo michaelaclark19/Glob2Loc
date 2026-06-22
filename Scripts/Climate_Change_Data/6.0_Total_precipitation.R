@@ -20,7 +20,9 @@ setwd('/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity')
 # List of directories
 dir.list <- 
   list.dirs(paste0(getwd(),'/CMIP6_Climate_Data')) %>%
-  .[grepl('[0-9]{4,4}-[0-9]{4,4}$',.)]
+  .[grepl('[0-9]{4,4}-[0-9]{4,4}$',.)] %>%
+  .[grepl('Historic.*1995|SSP.*2021|SSP.*2041',.)]
+
 # Which do we have?
 dirs.have <-
 	lapply(paste0(dir.list,'/Managed_Rasters'), list.files, full.names = TRUE) %>%

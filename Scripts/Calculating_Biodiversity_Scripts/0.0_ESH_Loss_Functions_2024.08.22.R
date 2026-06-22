@@ -2855,39 +2855,39 @@ pop.dens.coef.function <-
     # Uploading coefficients for pop density estimates
     # Order
     coef.order <- 
-      rbind(read.csv(paste0(getwd() %>% gsub('pubh-glob2loc','ouce-glob2loc',.),"/Population Density Estimates/RefittedSantiniModelCoefficients_random_order_Mammals.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Mammals'),
+      rbind(read.csv(paste0(getwd(),"/Population Density Estimates/RefittedSantiniModelCoefficients_random_order_Mammals.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Mammals'),
             # read.csv(paste0(getwd(),"/Population Density Estimates/RefittedSantiniModelCoefficients_random_order_Amphibians.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Amphibians'),
-            read.csv(paste0(getwd() %>% gsub('pubh-glob2loc','ouce-glob2loc',.),"/Population Density Estimates/RefittedSantiniModelCoefficients_random_order_Birds.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Birds'))
+            read.csv(paste0(getwd(),"/Population Density Estimates/RefittedSantiniModelCoefficients_random_order_Birds.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Birds'))
     # Family
     coef.family <- 
-      rbind(read.csv(paste0(getwd() %>% gsub('pubh-glob2loc','ouce-glob2loc',.),"/Population Density Estimates/RefittedSantiniModelCoefficients_random_family_Mammals.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Mammals'),
-            read.csv(paste0(getwd() %>% gsub('pubh-glob2loc','ouce-glob2loc',.),"/Population Density Estimates/RefittedSantiniModelCoefficients_random_family_Amphibians.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Amphibians'),
-            read.csv(paste0(getwd() %>% gsub('pubh-glob2loc','ouce-glob2loc',.),"/Population Density Estimates/RefittedSantiniModelCoefficients_random_family_Birds.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Birds'),
-	    read.csv(paste0(getwd() %>% gsub('pubh-glob2loc','ouce-glob2loc',.),"/Population Density Estimates/RefittedSantiniModelCoefficients_random_family_Reptiles.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Reptiles'))
+      rbind(read.csv(paste0(getwd(),"/Population Density Estimates/RefittedSantiniModelCoefficients_random_family_Mammals.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Mammals'),
+            read.csv(paste0(getwd(),"/Population Density Estimates/RefittedSantiniModelCoefficients_random_family_Amphibians.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Amphibians'),
+            read.csv(paste0(getwd(),"/Population Density Estimates/RefittedSantiniModelCoefficients_random_family_Birds.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Birds'),
+	    read.csv(paste0(getwd(),"/Population Density Estimates/RefittedSantiniModelCoefficients_random_family_Reptiles.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Reptiles'))
     # Binomial
     coef.binomial <- 
-      rbind(read.csv(paste0(getwd() %>% gsub('pubh-glob2loc','ouce-glob2loc',.),"/Population Density Estimates/RefittedSantiniModelCoefficients_random_binomial_Mammals.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Mammals'),
-            read.csv(paste0(getwd() %>% gsub('pubh-glob2loc','ouce-glob2loc',.),"/Population Density Estimates/RefittedSantiniModelCoefficients_random_binomial_Birds.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Birds'))
+      rbind(read.csv(paste0(getwd(),"/Population Density Estimates/RefittedSantiniModelCoefficients_random_binomial_Mammals.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Mammals'),
+            read.csv(paste0(getwd(),"/Population Density Estimates/RefittedSantiniModelCoefficients_random_binomial_Birds.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Birds'))
     # Climate
     coef.climate <- 
-      rbind(read.csv(paste0(getwd() %>% gsub('pubh-glob2loc','ouce-glob2loc',.),"/Population Density Estimates/RefittedSantiniModelCoefficients_fixed_Mammals.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Mammals'),
-            read.csv(paste0(getwd() %>% gsub('pubh-glob2loc','ouce-glob2loc',.),"/Population Density Estimates/RefittedSantiniModelCoefficients_fixed_Amphibians.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Amphibians'),
-            read.csv(paste0(getwd() %>% gsub('pubh-glob2loc','ouce-glob2loc',.),"/Population Density Estimates/RefittedSantiniModelCoefficients_fixed_Birds.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Birds'),
-	    read.csv(paste0(getwd() %>% gsub('pubh-glob2loc','ouce-glob2loc',.),"/Population Density Estimates/RefittedSantiniModelCoefficients_fixed_Reptiles.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Reptiles'))
+      rbind(read.csv(paste0(getwd(),"/Population Density Estimates/RefittedSantiniModelCoefficients_fixed_Mammals.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Mammals'),
+            read.csv(paste0(getwd(),"/Population Density Estimates/RefittedSantiniModelCoefficients_fixed_Amphibians.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Amphibians'),
+            read.csv(paste0(getwd(),"/Population Density Estimates/RefittedSantiniModelCoefficients_fixed_Birds.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Birds'),
+	    read.csv(paste0(getwd(),"/Population Density Estimates/RefittedSantiniModelCoefficients_fixed_Reptiles.csv"), stringsAsFactors = FALSE) %>% mutate(taxon = 'Reptiles'))
 
     # Managing body mass data
     # And then merging into the data set
 
     # bird/amp/mammal body mass
 body_mass <-
-  read.csv(paste0(getwd() %>% gsub('pubh-glob2loc','ouce-glob2loc',.),"/Other Data Inputs/Pop Density Inputs/Body Mass Estimates 20February2020 Updated Taxonomy.csv"), stringsAsFactors = FALSE) %>% # Importing body mass file
+  read.csv(paste0(getwd(),"/Other Data Inputs/Pop Density Inputs/Body Mass Estimates 20February2020 Updated Taxonomy.csv"), stringsAsFactors = FALSE) %>% # Importing body mass file
   #read.csv(paste0(getwd(),"/Other Data Inputs/Pop Density Inputs/Body Mass Estimates 14November2019.csv"), stringsAsFactors = FALSE) %>% # Importing body mass file
   dplyr::select(order = Order, family = Family, genus = Genus, species_merge = binomial, est_mass_kg, Family_Mass_kg, Genus_Mass_kg) %>%  # Only keeping necessary columns
   mutate(binomial = species_merge)
 
 # reptile body mass
 rep_body_mass <-
-  read.csv('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Other Data Inputs/Pop Density Inputs/reptile_body_masses.csv',
+  read.csv(paste0(getwd(),'/Other Data Inputs/Pop Density Inputs/reptile_body_masses.csv'),
            stringsAsFactors = FALSE) %>%
   dplyr::rename(order = Order,
                 family = Family) %>%

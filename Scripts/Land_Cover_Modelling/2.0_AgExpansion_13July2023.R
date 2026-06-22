@@ -27,7 +27,7 @@ rm(list=ls())
 # Load models, functions and data -----
 setwd("/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity")
 # setwd("/Users/maclark/Desktop/Multiple Stresses of Biodiversity")
-source("/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Scripts/Land Cover Modelling/0.0_LandUseChangeFunctions_12July2023.R")
+source(paste0(getwd(),"/Scripts/Land Cover Modelling/0.0_LandUseChangeFunctions_12July2023.R"))
 
 # List for GBM outputs
 file.list.mods_crop <- list.files(pattern = "Crop", path = paste0(getwd(),"/Land Forecasting Coefs and Plots/Model Coefficients"), full.names = TRUE) %>% .[grep('July2021',.)]
@@ -138,7 +138,7 @@ for(k in (1:12)) { # Odd ordering is to complete the small regions first to chec
     # print("Loading regional data")
     
     region.data <- fread(paste0(getwd(),"/Forecasting_Data/",
-                                  file.list.data[k]),
+                                  file.list.data %>% .[grepl(region.names[k],.)]),
                             stringsAsFactors = FALSE) %>%
       mutate(country_id = country_id_impact)
     region.data <- as.data.frame(region.data)
@@ -377,7 +377,7 @@ for(k in (1:12)) { # Odd ordering is to complete the small regions first to chec
       
       ### merging in GDD binary information
       # file list
-      gdd_files <- list.files(paste0(getwd() %>% gsub('pubh-glob2loc','ouce-glob2loc',.),'/CMIP6_Climate_Data/SSP2-4.5/Interpolated_Rasters'), pattern = 'GDD_5C_binary', full.names = TRUE)
+      gdd_files <- list.files(paste0(getwd(),'/CMIP6_Climate_Data/SSP2-4.5/Interpolated_Rasters'), pattern = 'GDD_5C_binary', full.names = TRUE)
       
       # years
       years <- sort(str_extract(gdd_files,'binary_[0-9]{4,4}')) %>% gsub('binary_','',.)

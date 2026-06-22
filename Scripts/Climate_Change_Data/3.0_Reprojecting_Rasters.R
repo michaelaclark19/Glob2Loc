@@ -1,5 +1,11 @@
 #!/usr/bin/env Rscript
 
+###
+# The original version of the scripts used the rgdal and gdalUtils versions of project raster
+# If rerunning these scripts, I suggest updating these functions to run on the terra() package equivalents
+# These are much faster and are also maintained
+
+
 ### 
 # Managing climate maps
 # Reprojecting into global mollweide
@@ -13,7 +19,7 @@ library(rgdal)
 library(gdalUtils)
 # Number of cores to parallelise
 n_cores = 10
-setwd('/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity')
+
 # Setting working directory
 setwd('/data/pubh-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity')
 

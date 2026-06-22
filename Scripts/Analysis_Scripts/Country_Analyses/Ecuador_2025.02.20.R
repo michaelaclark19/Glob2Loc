@@ -93,7 +93,7 @@ Genus_Mass_kg) %>%  # Only keeping necessary columns
 
 # reptile body mass
 rep_body_mass <-
-  read.csv('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Other Data Inputs/Pop Density Inputs/reptile_body_masses.csv',
+  read.csv(paste0(getwd(),'/Other Data Inputs/Pop Density Inputs/reptile_body_masses.csv'),
            stringsAsFactors = FALSE) %>%
   dplyr::rename(order = Order,
                 family = Family) %>%
@@ -206,7 +206,7 @@ for(taxa in taxa_list) { # Looping through taxa
   #             full.names = TRUE)
 
 	cmd <-
-		paste0("find /data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Outputs/Raster_Outputs/BAU/",taxa,"/ -type f")
+		paste0("find /.../Outputs/Raster_Outputs/BAU/",taxa,"/ -type f")
  
       file_list_taxa <-  
 	system(

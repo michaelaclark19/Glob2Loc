@@ -86,14 +86,14 @@ country_rast_cropped[!is.na(country_rast_cropped)] <- 0
 # Getting body mass data
 # bird/amp/mammal body mass
 body_mass <-
-  read.csv(paste0(getwd() %>% gsub('pubh-glob2loc','ouce-glob2loc',.),"/Other Data Inputs/Pop Density Inputs/Body Mass Estimates 20February2020 Updated Taxonomy.csv"), stringsAsFactors = FALSE) %>% # Importing body mass file
+  read.csv(paste0(getwd(),"/Other Data Inputs/Pop Density Inputs/Body Mass Estimates 20February2020 Updated Taxonomy.csv"), stringsAsFactors = FALSE) %>% # Importing body mass file
   dplyr::select(order = Order, family = Family, genus = Genus, species_merge = binomial, est_mass_kg, Family_Mass_kg,
-Genus_Mass_kg) %>%  # Only keeping necessary columns
+                Genus_Mass_kg) %>%  # Only keeping necessary columns
   mutate(binomial = species_merge)
 
 # reptile body mass
 rep_body_mass <-
-  read.csv('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Other Data Inputs/Pop Density Inputs/reptile_body_masses.csv',
+  read.csv(paste0(getwd(),'/Other Data Inputs/Pop Density Inputs/reptile_body_masses.csv'),
            stringsAsFactors = FALSE) %>%
   dplyr::rename(order = Order,
                 family = Family) %>%
@@ -105,8 +105,8 @@ rep_body_mass <-
   mutate(genus = gsub('_.*','',binomial),
          species_merge = binomial)
 
-  # rbinding the body mass estimates for reps and non reps
-  body_mass_merge <-
+# rbinding the body mass estimates for reps and non reps
+body_mass_merge <-
   rbind(body_mass,
         rep_body_mass[,names(body_mass)])
 
@@ -129,11 +129,11 @@ species_funcion <-
       ### First for habitat availability
       # Getting raster
       species_raster <- raster(ss)
-    tmp_species_name <-
-	    ss %>%
-	    gsub(paste0('.*',outcome,'_'),'',.) %>%
-	    gsub(paste0('_',thresh,'.*'),'',.)
-     #cat(tmp_species_name,'\n') 
+      tmp_species_name <-
+        ss %>%
+        gsub(paste0('.*',outcome,'_'),'',.) %>%
+        gsub(paste0('_',thresh,'.*'),'',.)
+      #cat(tmp_species_name,'\n') 
       # Checking whether we need to loop over the species
       if(tryCatch(!is.null(raster::crop(species_raster,extent(country_rast_cropped))), error=function(e) return(FALSE))) { # This returns a true/false statement, TRUE if rasters intersect, FALSE if they do not
         
@@ -154,36 +154,36 @@ species_funcion <-
         # Adding species raster to the out rasters
         out_raster <- out_raster + species_raster
         out_raster_richness <- out_raster_richness + species_richness
-
-	if(outcome %in% 'pop_density') {
-		mass_species <- body_mass_merge$est_mass_kg[body_mass_merge$species_merge %in% tmp_species_name]
-		if(length(mass_species) >= 1) {
-			if(is.na(mass_species)) {mass_species <- 0}
-			if(is.null(mass_species)) {mass_species <- 0}
-			   biomass_raster <- species_raster * mass_species
-			   biomass_raster <- raster::extend(biomass_raster,country_rast_cropped,value=0)
-			   out_raster_biomass <- out_raster_biomass + biomass_raster
-		} # End if statement for no body mass data
-	} # End if statement for density
         
-        } # End of try catch if statement
-     } # End of species loop
+        if(outcome %in% 'pop_density') {
+          mass_species <- body_mass_merge$est_mass_kg[body_mass_merge$species_merge %in% tmp_species_name]
+          if(length(mass_species) >= 1) {
+            if(is.na(mass_species)) {mass_species <- 0}
+            if(is.null(mass_species)) {mass_species <- 0}
+            biomass_raster <- species_raster * mass_species
+            biomass_raster <- raster::extend(biomass_raster,country_rast_cropped,value=0)
+            out_raster_biomass <- out_raster_biomass + biomass_raster
+          } # End if statement for no body mass data
+        } # End if statement for density
+        
+      } # End of try catch if statement
+    } # End of species loop
     
     # Making list to return object
     if(outcome %in% 'pop_density') {
-	    out_list <- 
-		    list(out_raster,
-			 out_raster_richness,
-			 out_raster_biomass)
-    
-    names(out_list) <- c('outcome','richness','biomass')
+      out_list <- 
+        list(out_raster,
+             out_raster_richness,
+             out_raster_biomass)
+      
+      names(out_list) <- c('outcome','richness','biomass')
     } else {
-	    out_list <-
-                    list(out_raster,
-                         out_raster_richness)
-
-    names(out_list) <- c('outcome','richness')
-    
+      out_list <-
+        list(out_raster,
+             out_raster_richness)
+      
+      names(out_list) <- c('outcome','richness')
+      
     }
     
     ### Returning files
@@ -204,18 +204,18 @@ for(taxa in taxa_list) { # Looping through taxa
   #file_list_taxa <-
   #  list.files(paste0(getwd(),'/Outputs/Raster_Outputs/BAU/',taxa),
   #             full.names = TRUE)
-
-	cmd <-
-		paste0("find /data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Outputs/Raster_Outputs/BAU/",taxa,"/ -type f")
- 
-      file_list_taxa <-  
-	system(
-  cmd,
-  intern = TRUE
-)
-
-
-
+  
+  cmd <-
+    paste0("find /.../Outputs/Raster_Outputs/BAU/",taxa,"/ -type f")
+  
+  file_list_taxa <-  
+    system(
+      cmd,
+      intern = TRUE
+    )
+  
+  
+  
   for(thresh in thresh_list[1]) { # Looping through taxa
     # Limiting file list...
     file_list_thresh <-
@@ -246,7 +246,7 @@ for(taxa in taxa_list) { # Looping through taxa
           file_list_outcome <-
             file_list_scenario %>%
             .[grepl(outcome,.)] %>%
-	    .[!grepl('climate_suitable',.,ignore.case=TRUE)]
+            .[!grepl('climate_suitable',.,ignore.case=TRUE)]
           
           # Chunking file list into n parts for parallelisation
           chunk2 <- function(x,n) split(x, cut(seq_along(x), n, labels = FALSE)) 
@@ -264,37 +264,37 @@ for(taxa in taxa_list) { # Looping through taxa
           for(ii in 1:length(out_raster_list)) {out_raster_stack <- out_raster_stack + out_raster_list[[ii]][['outcome']]}
           for(ii in 1:length(out_raster_list)) {out_raster_richness <- out_raster_richness + out_raster_list[[ii]][['richness']]}
           if(outcome %in% 'pop_density') {
-		  for(ii in 1:length(out_raster_list)) {out_raster_biomass <- out_raster_biomass + out_raster_list[[ii]][['biomass']]}
-
-	  
-	  }
+            for(ii in 1:length(out_raster_list)) {out_raster_biomass <- out_raster_biomass + out_raster_list[[ii]][['biomass']]}
+            
+            
+          }
           # Saving rasters
           # writeRaster(out_raster_stack,'/data/ouce-glob2loc/pubh0329/outcome_check.tif')
           # writeRaster(out_raster_richness,'/data/ouce-glob2loc/pubh0329/richness_check.tif')
           writeRaster(out_raster_stack,
                       paste0(getwd(),'/Analyses/Landscape_Analyses/',country,'_',
-                            thresh,'_',taxa,'_',year,'_',scen,'_',outcome,'_',
-                            Sys.Date(),'.tif'),
+                             thresh,'_',taxa,'_',year,'_',scen,'_',outcome,'_',
+                             Sys.Date(),'.tif'),
                       overwrite = TRUE)
-
+          
           writeRaster(out_raster_richness,
                       paste0(getwd(),'/Analyses/Landscape_Analyses/',country,'_',
-                            thresh,'_',taxa,'_',year,'_',scen,'_',outcome,'_richness_',
-                            Sys.Date(),'.tif'),
+                             thresh,'_',taxa,'_',year,'_',scen,'_',outcome,'_richness_',
+                             Sys.Date(),'.tif'),
                       overwrite = TRUE)
-
+          
           if(outcome %in% 'pop_density') {
-		  cat('Min Value:',minValue(out_raster_biomass),'\n')
-		  cat('Max Value:',maxValue(out_raster_biomass),'\n')
-		   writeRaster(out_raster_biomass,
-                      paste0(getwd(),'/Analyses/Landscape_Analyses/',country,'_',
-                            thresh,'_',taxa,'_',year,'_',scen,'_biomass_',
-                            Sys.Date(),'.tif'),
-                      overwrite = TRUE)
-	  rm(out_raster_biomass)
-	  }
-
-
+            cat('Min Value:',minValue(out_raster_biomass),'\n')
+            cat('Max Value:',maxValue(out_raster_biomass),'\n')
+            writeRaster(out_raster_biomass,
+                        paste0(getwd(),'/Analyses/Landscape_Analyses/',country,'_',
+                               thresh,'_',taxa,'_',year,'_',scen,'_biomass_',
+                               Sys.Date(),'.tif'),
+                        overwrite = TRUE)
+            rm(out_raster_biomass)
+          }
+          
+          
           # Clearing files
           rm(out_raster_richness,out_raster_stack,file_list_chunked,file_list_outcome)
           

@@ -263,8 +263,8 @@ dir.create(paste0(getwd(),'/TMP_SDM_FILE_1'))
 dir.create(paste0(getwd(),'/TMP_SDM_FILE_1_MOSAIC'))
 
 # Saving path names so I don't need to copy and paste a bunch later
-path.sdms.write.tmp <- paste0(getwd(),'/TMP_SDM_FILE_1') %>% gsub('ouce-glob2loc','pubh-glob2loc',.)
-path.sdms.write.mosaiced.tmp <- paste0(getwd(),'/TMP_SDM_FILE_1_MOSAIC') %>% gsub('ouce-glob2loc','pubh-glob2loc',.)
+path.sdms.write.tmp <- paste0(getwd(),'/TMP_SDM_FILE_1')
+path.sdms.write.mosaiced.tmp <- paste0(getwd(),'/TMP_SDM_FILE_1_MOSAIC')
 
 # List of ssps
 ssp.list <- list.files(paste0(getwd(),'/CMIP6_Climate_Data'))
@@ -885,8 +885,7 @@ cat('Finished Predicting Models')
                      df$species_name[k],
                      "_",
                      names(raw.preds.stack)[ii],
-                     '.tif') %>%
-                gsub('ouce-glob2loc','pubh-glob2loc',.),
+                     '.tif'),
               overwrite = TRUE)
 }
 

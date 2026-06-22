@@ -103,8 +103,7 @@ tnc.eco <- raster(paste0(getwd(),'/Ecoregions_Feb2023/biomes_realms_raster.tif')
 
 # Have multiple working directories because of memory issues
 # Needed to get creative!
-wd.list <-
-  c('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity')
+wd.list <- getwd()
 
 # List of species we have
 species.list <-
@@ -264,7 +263,7 @@ species_wrap_fun <-
           
           
           
-          if(sum(grepl('pubh-glob2loc',model.files)) > 0 & sum(grepl('ouce-glob2loc',model.files)) > 0) { # Checking if there are files in both the ouce and pubh directories. If so, take the ouce files
+          if(sum(grepl(getwd(),model.files)) > 0 & sum(grepl(getwd(),model.files)) > 0) { # Checking if there are files in both the ouce and pubh directories. If so, take the ouce files
             model.files <- model.files[grepl('ouce-glob2loc',model.files)]
           } # End if statement
           
@@ -529,7 +528,7 @@ try_catch_function <-
                # tracking species it did not work for
                
                write.csv(data.frame(complete = 'complete'),
-                         paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/SSP5-8.5/',tmp_species, '_error_completed.csv'))
+                         paste0(getwd(),'/ESH_RCPs/SSP5-8.5/',tmp_species, '_error_completed.csv'))
              }) # End try catch 
   }
 

@@ -78,17 +78,17 @@ scens.save <- 'All'
 migration <- climate_migration_function('limits')
 
 # List of SSPs
-ssp.list <- list.files(paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs'), pattern = 'SSP')
+ssp.list <- list.files(paste0(getwd(),'/ESH_RCPs'), pattern = 'SSP')
 
 # List of taxa
 taxa.list <- 
-  list.files(paste0(getwd()  %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/',ssp.list[2])) %>% 
+  list.files(paste0(getwd(),'/ESH_RCPs/',ssp.list[2])) %>% 
   .[!grepl('.tif',.)] %>%
   .[!grepl('_',.)]
 
 # List of years to calculate
 years.list <- 
-  list.files(paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/',ssp.list[2],'/',taxa.list[1])) %>%
+  list.files(paste0(getwd(),'/ESH_RCPs/',ssp.list[2],'/',taxa.list[1])) %>%
   str_extract(.,'[0-9]{4,4}') %>%
   unique() %>%
   as.numeric() %>%
@@ -107,7 +107,7 @@ ssp.years <-
 
 # List of threshold types
 thresh.list <- 
-  list.files(paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/',ssp.list[2],'/',taxa.list[1]), pattern = 'migrate') %>%
+  list.files(paste0(getwd(),'/ESH_RCPs/',ssp.list[2],'/',taxa.list[1]), pattern = 'migrate') %>%
   gsub('_migrate.*','',.) %>%
   gsub('.*[0-9]{4,4}_','',.) %>%
   unique()
@@ -179,12 +179,13 @@ sdm.species <-
   do.call(c,
           lapply(taxa.list,
                  function(i) {
-                   list.files(paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/SSP5-8.5/',i),
-                              pattern = 'csv') %>%
+                   list.files(paste0(getwd(),'/ESH_RCPs/SSP2-4.5/',i),
+                              pattern = '_2050_specsens_migrate') %>%
                      .[grepl('migrate',.)] %>% 
                      paste0(i,'/',.) %>%
                      gsub(migration['sdm.species.search'],'',.)
-                 }))
+                 })) %>%
+  gsub('_SSP.*','',.)
 
 # Getting list of species with AOH maps (e.g. all species)
 aoh.species <-
@@ -419,7 +420,7 @@ dir.create(patch.estimate.dir)
 dir.create(csv.estimate.dir)
 
 # Creating directories for updated map files
-ssps_tmp <- paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/',ssp.list,'/')
+ssps_tmp <- paste0(getwd(),'/ESH_RCPs/',ssp.list,'/')
 taxas_tmp <- paste0(taxa.list,'_Updated')
 
 lapply(apply(expand.grid(ssps_tmp, taxas_tmp), 1, paste, collapse=""),
@@ -443,7 +444,7 @@ stressors <-
 species_completed <-
   do.call(c,
           lapply(
-            list.files('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/Outputs/CSV_File_Outputs/BAU',
+            list.files(paste0(getwd(),'/Outputs/CSV_File_Outputs/BAU'),
                        full.names = TRUE) %>%
               .[!grepl('Old',.)],
             list.files, full.names = TRUE, pattern = 'completed')) %>%
@@ -477,7 +478,7 @@ species.frame.full <-
 # getting coo data
 # Use this to limit which species to incorporate in the analysis
 coo_data <-
-  read.csv('/data/ouce-glob2loc/pubh0329/Multiple_Stresses_of_Biodiversity/COO_Data/NewCountryOfOccurrenceData.csv') %>%
+  read.csv(paste0(getwd(),'/COO_Data/NewCountryOfOccurrenceData.csv')) %>%
   mutate(region = countrycode(ISO3,origin = 'iso3c',destination = 'region')) %>%
   filter(taxon %in% 'Birds') %>%
   # filter(grepl('Vulpes',species)) %>%
@@ -575,7 +576,7 @@ species_loop_function <-
       # Loading SDM map
       if(species.frame$Have_SDM[k] %in% 1) {
         sdm_map_file <-
-          list.files(paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/',ssp,'/',species.frame$taxon[k]), 
+          list.files(paste0(getwd(),'/ESH_RCPs/',ssp,'/',species.frame$taxon[k]), 
                      # pattern = gsub(paste0(species.frame$taxon[k],'/'),'',species.frame$Species[k]),
                      # pattern = species.frame$Species[k],
                      full.names = TRUE) %>%
@@ -638,7 +639,7 @@ species_loop_function <-
             
             # Current 2020 map
             sdm_map_file_current <- 
-              list.files(paste0(getwd() %>% gsub('ouce-glob2loc','pubh-glob2loc',.),'/ESH_RCPs/',ssp,'/',species.frame$taxon[k]), 
+              list.files(paste0(getwd(),'/ESH_RCPs/',ssp,'/',species.frame$taxon[k]), 
                          # pattern = gsub(paste0(species.frame$taxon[k],'/'),'',species.frame$Species[k]),
                          # pattern = species.frame$Species[k],
                          full.names = TRUE) %>%
@@ -1549,7 +1550,7 @@ for(i in scenarios.list) { # Loop through scenarios
     
     # Loop through years
     # for(y in years.list[years.list > 2005 & years.list < 2055]) { # Only 2010 to 2050. Have climate maps to 2090
-    for(y in c(2050)) { # For testing
+    for(y in c(2020,2050)) { # For testing
       # Checking progress
       cat(paste("Processing",i,y,'\n'))
       
@@ -1704,13 +1705,14 @@ cat('Number Species Completed in',y,':',length(species_completed_year),'\n')
 # set.seed(0xBEEF)
 #future_lapply(1:nrow(species.frame), species_loop_function)
 #plan(sequential)
-	      trycatch_fun <-
-                    function(ss) {
-                    tryCatch(species_loop_function(ss),
-                    error = function(e) {cat('Error:',ss,'\n')})
-                    }
+	     
+	     trycatch_fun <-
+		    function(ss) {
+		    tryCatch(species_loop_function(ss),
+		    error = function(e) {cat('Error:',ss,'\n')})
+		    } 
 
-            mclapply(1:nrow(species.frame),trycatch_fun,mc.cores=1)
+	    mclapply(1:nrow(species.frame),trycatch_fun,mc.cores=1)
 	      #mclapply(1:nrow(species.frame),species_loop_function,mc.cores = 1) # End species list
       } # End if statement checking to see if any species need to be analysed...
     } # End years loop
